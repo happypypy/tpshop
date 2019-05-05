@@ -38,7 +38,7 @@
 			<div class="aui-scroll-content">
 				<div class="aui-scroll-content-item">
 					<div class="aui-class-img">
-						<img src="__PUBLIC__/img/pd/cf-4.jpg" alt="">
+						<img src="__PUBLIC__/Home/img/pd/cf-4.jpg" alt="">
 					</div>
 					<h2 class="aui-scroll-content-title">热门推荐</h2>
 					<section class="aui-grid-content">
@@ -46,7 +46,7 @@
 							<!--商品数据-->
 							<foreach name="hot" item="h">
 								<a href="#" class="aui-grid-row-item">
-									<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/../Upload/type/{$h.pic}" alt=""></i>
+									<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/Upload/type/{$h.pic}" alt=""></i>
 									<p class="aui-grid-row-label">{$h.tname}</p>
 								</a>
 							</foreach>
@@ -56,7 +56,7 @@
 				<foreach name="type" item="v">
 				<div class="aui-scroll-content-item">
 					<div class="aui-class-img">
-						<img src="__PUBLIC__/img/pd/cf-8.jpg" alt="">
+						<img src="__PUBLIC__/Home/img/pd/cf-8.jpg" alt="">
 					</div>
 					<h2 class="aui-scroll-content-title">{$v.tname}</h2>
 					<section class="aui-grid-content">
@@ -65,7 +65,7 @@
 							<foreach name="data" item="d">
 								<if condition="($d['pid'] eq $v['id']) and ($d['type'] eq 1)">
 									<a href="#" class="aui-grid-row-item">
-										<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/../Upload/type/{$d.pic}" alt=""></i>
+										<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/Upload/type/{$d.pic}" alt=""></i>
 										<p class="aui-grid-row-label">{$d.tname}</p>
 									</a>
 								</if>
@@ -80,7 +80,7 @@
 	</section>
 
 	<include file="Common:foot"/>
-	<script src="__PUBLIC__/js/jquery.min.js"></script>
-	<script src="__PUBLIC__/js/aui.js"></script>
+	<script src="__PUBLIC__/Home/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/Home/js/aui.js"></script>
 </body>
 </html>
