@@ -1,4 +1,16 @@
-	<include file="Common:header"/>
+<?php if (!defined('THINK_PATH')) exit();?>	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Public/Home/css/core.css">
+    <link rel="stylesheet" href="/Public/Home/css/icon.css">
+    <link rel="stylesheet" href="/Public/Home/css/home.css">
+    <link rel="icon" type="image/x-icon" href="/Public/Home/favicon.ico">
+    <link href="/Public/Home/iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
 	<title>限时抢购</title>
 </head>
 <body>
@@ -58,191 +70,171 @@
 				<!--0点开抢-->
 				<div class="tab-panel-item tab-active">
 					<ul>
-						<foreach name="goods" item="g">
-							<if condition="$g['buytime'] eq 0">
-								<li>
+						<?php if(is_array($goods)): foreach($goods as $key=>$g): if($g['buytime'] == 0): ?><li>
 									<div class="aui-list-title-info">
 										<a href="javascript:;" class="aui-list-product-fl-item">
 											<div class="aui-list-product-fl-img">
-												<img src="__PUBLIC__/Upload/goods/{$g.pic}" alt="">
+												<img src="/Public/Upload/goods/<?php echo ($g["pic"]); ?>" alt="">
 											</div>
 											<div class="aui-list-product-fl-text">
-												<h3 class="aui-list-product-fl-title">{$g.goodsname}</h3>
+												<h3 class="aui-list-product-fl-title"><?php echo ($g["goodsname"]); ?></h3>
 												<div class="aui-list-product-fl-mes">
 													<div>
 											<span class="aui-list-product-item-price">
 												<em>¥</em>
-												{$g.buyprice}
+												<?php echo ($g["buyprice"]); ?>
 											</span>
 														<span class="aui-list-product-item-del-price">
-												¥{$g.price}
+												¥<?php echo ($g["price"]); ?>
 											</span>
 													</div>
 													<div class="aui-btn-purchase">
-														仅剩{$g.buynum}件
+														仅剩<?php echo ($g["buynum"]); ?>件
 													</div>
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="{:U('goodinfo')}?id={$g.id}" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
-								</li>
-							</if>
-						</foreach>
+								</li><?php endif; endforeach; endif; ?>
 					</ul>
 				</div>
 				<!--7点开抢-->
 				<div class="tab-panel-item ">
 					<ul>
-						<foreach name="goods" item="g">
-							<if condition="$g['buytime'] eq 7">
-								<li>
+						<?php if(is_array($goods)): foreach($goods as $key=>$g): if($g['buytime'] == 7): ?><li>
 									<div class="aui-list-title-info">
 										<a href="javascript:;" class="aui-list-product-fl-item">
 											<div class="aui-list-product-fl-img">
-												<img src="__PUBLIC__/Upload/goods/{$g.pic}" alt="">
+												<img src="/Public/Upload/goods/<?php echo ($g["pic"]); ?>" alt="">
 											</div>
 											<div class="aui-list-product-fl-text">
-												<h3 class="aui-list-product-fl-title">{$g.goodsname}</h3>
+												<h3 class="aui-list-product-fl-title"><?php echo ($g["goodsname"]); ?></h3>
 												<div class="aui-list-product-fl-mes">
 													<div>
 											<span class="aui-list-product-item-price">
 												<em>¥</em>
-												{$g.buyprice}
+												<?php echo ($g["buyprice"]); ?>
 											</span>
 														<span class="aui-list-product-item-del-price">
-												¥{$g.price}
+												¥<?php echo ($g["price"]); ?>
 											</span>
 													</div>
 													<div class="aui-btn-purchase">
-														仅剩{$g.buynum}件
+														仅剩<?php echo ($g["buynum"]); ?>件
 													</div>
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="{:U('goodinfo')}?id={$g.id}" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
-								</li>
-							</if>
-						</foreach>
+								</li><?php endif; endforeach; endif; ?>
 					</ul>
 				</div>
 				<!--9点开抢-->
 				<div class="tab-panel-item ">
 					<ul>
-						<foreach name="goods" item="g">
-							<if condition="$g['buytime'] eq 9">
-								<li>
+						<?php if(is_array($goods)): foreach($goods as $key=>$g): if($g['buytime'] == 9): ?><li>
 									<div class="aui-list-title-info">
 										<a href="javascript:;" class="aui-list-product-fl-item">
 											<div class="aui-list-product-fl-img">
-												<img src="__PUBLIC__/Upload/goods/{$g.pic}" alt="">
+												<img src="/Public/Upload/goods/<?php echo ($g["pic"]); ?>" alt="">
 											</div>
 											<div class="aui-list-product-fl-text">
-												<h3 class="aui-list-product-fl-title">{$g.goodsname}</h3>
+												<h3 class="aui-list-product-fl-title"><?php echo ($g["goodsname"]); ?></h3>
 												<div class="aui-list-product-fl-mes">
 													<div>
 											<span class="aui-list-product-item-price">
 												<em>¥</em>
-												{$g.buyprice}
+												<?php echo ($g["buyprice"]); ?>
 											</span>
 														<span class="aui-list-product-item-del-price">
-												¥{$g.price}
+												¥<?php echo ($g["price"]); ?>
 											</span>
 													</div>
 													<div class="aui-btn-purchase">
-														仅剩{$g.buynum}件
+														仅剩<?php echo ($g["buynum"]); ?>件
 													</div>
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="{:U('goodinfo')}?id={$g.id}" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
-								</li>
-							</if>
-						</foreach>
+								</li><?php endif; endforeach; endif; ?>
 					</ul>
 				</div>
 				<!--13点开抢-->
 				<div class="tab-panel-item ">
 					<ul>
-						<foreach name="goods" item="g">
-							<if condition="$g['buytime'] eq 13">
-								<li>
+						<?php if(is_array($goods)): foreach($goods as $key=>$g): if($g['buytime'] == 13): ?><li>
 									<div class="aui-list-title-info">
 										<a href="javascript:;" class="aui-list-product-fl-item">
 											<div class="aui-list-product-fl-img">
-												<img src="__PUBLIC__/Upload/goods/{$g.pic}" alt="">
+												<img src="/Public/Upload/goods/<?php echo ($g["pic"]); ?>" alt="">
 											</div>
 											<div class="aui-list-product-fl-text">
-												<h3 class="aui-list-product-fl-title">{$g.goodsname}</h3>
+												<h3 class="aui-list-product-fl-title"><?php echo ($g["goodsname"]); ?></h3>
 												<div class="aui-list-product-fl-mes">
 													<div>
 											<span class="aui-list-product-item-price">
 												<em>¥</em>
-												{$g.buyprice}
+												<?php echo ($g["buyprice"]); ?>
 											</span>
 														<span class="aui-list-product-item-del-price">
-												¥{$g.price}
+												¥<?php echo ($g["price"]); ?>
 											</span>
 													</div>
 													<div class="aui-btn-purchase">
-														仅剩{$g.buynum}件
+														仅剩<?php echo ($g["buynum"]); ?>件
 													</div>
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="{:U('goodinfo')}?id={$g.id}" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
-								</li>
-							</if>
-						</foreach>
+								</li><?php endif; endforeach; endif; ?>
 					</ul>
 				</div>
 				<!--17点开抢-->
 				<div class="tab-panel-item ">
 					<ul>
-						<foreach name="goods" item="g">
-							<if condition="$g['buytime'] eq 17">
-								<li>
+						<?php if(is_array($goods)): foreach($goods as $key=>$g): if($g['buytime'] == 17): ?><li>
 									<div class="aui-list-title-info">
 										<a href="javascript:;" class="aui-list-product-fl-item">
 											<div class="aui-list-product-fl-img">
-												<img src="__PUBLIC__/Upload/goods/{$g.pic}" alt="">
+												<img src="/Public/Upload/goods/<?php echo ($g["pic"]); ?>" alt="">
 											</div>
 											<div class="aui-list-product-fl-text">
-												<h3 class="aui-list-product-fl-title">{$g.goodsname}</h3>
+												<h3 class="aui-list-product-fl-title"><?php echo ($g["goodsname"]); ?></h3>
 												<div class="aui-list-product-fl-mes">
 													<div>
 											<span class="aui-list-product-item-price">
 												<em>¥</em>
-												{$g.buyprice}
+												<?php echo ($g["buyprice"]); ?>
 											</span>
 														<span class="aui-list-product-item-del-price">
-												¥{$g.price}
+												¥<?php echo ($g["price"]); ?>
 											</span>
 													</div>
 													<div class="aui-btn-purchase">
-														仅剩{$g.buynum}件
+														仅剩<?php echo ($g["buynum"]); ?>件
 													</div>
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="{:U('goodinfo')}?id={$g.id}" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
-								</li>
-							</if>
-						</foreach>
+								</li><?php endif; endforeach; endif; ?>
 					</ul>
 				</div>
 			</div>
@@ -250,8 +242,8 @@
 	</section>
 
 
-	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/aui.js"></script>
+	<script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/Public/Home/js/aui.js"></script>
 	<script type="text/javascript" >
         /**
          * Javascript API调用Tab
