@@ -96,7 +96,7 @@
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="#" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
 								</li><?php endif; endforeach; endif; ?>
 					</ul>
@@ -130,7 +130,7 @@
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="#" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
 								</li><?php endif; endforeach; endif; ?>
 					</ul>
@@ -164,7 +164,7 @@
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="#" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
 								</li><?php endif; endforeach; endif; ?>
 					</ul>
@@ -198,7 +198,7 @@
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="#" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
 								</li><?php endif; endforeach; endif; ?>
 					</ul>
@@ -232,7 +232,7 @@
 										</a>
 									</div>
 									<div class="aui-list-title-btn">
-										<a href="#" class="red-color">马上抢购</a>
+										<a href="<?php echo U('goodinfo');?>?id=<?php echo ($g["id"]); ?>" class="red-color">马上抢购</a>
 									</div>
 								</li><?php endif; endforeach; endif; ?>
 					</ul>

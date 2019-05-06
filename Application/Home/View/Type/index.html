@@ -45,7 +45,7 @@
 						<div class="aui-grid-row aui-grid-row-clear">
 							<!--商品数据-->
 							<foreach name="hot" item="h">
-								<a href="#" class="aui-grid-row-item">
+								<a href="{:U('typegoods')}?id={$h.id}" class="aui-grid-row-item">
 									<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/Upload/type/{$h.pic}" alt=""></i>
 									<p class="aui-grid-row-label">{$h.tname}</p>
 								</a>
@@ -64,7 +64,7 @@
 							<!--商品数据-->
 							<foreach name="data" item="d">
 								<if condition="($d['pid'] eq $v['id']) and ($d['type'] eq 1)">
-									<a href="#" class="aui-grid-row-item">
+									<a href="{:U('typegoods')}?id={$d.id}" class="aui-grid-row-item">
 										<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/Upload/type/{$d.pic}" alt=""></i>
 										<p class="aui-grid-row-label">{$d.tname}</p>
 									</a>

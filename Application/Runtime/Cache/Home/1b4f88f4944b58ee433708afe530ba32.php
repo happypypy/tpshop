@@ -54,7 +54,7 @@
 					<section class="aui-grid-content">
 						<div class="aui-grid-row aui-grid-row-clear">
 							<!--商品数据-->
-							<?php if(is_array($hot)): foreach($hot as $key=>$h): ?><a href="#" class="aui-grid-row-item">
+							<?php if(is_array($hot)): foreach($hot as $key=>$h): ?><a href="<?php echo U('typegoods');?>?id=<?php echo ($h["id"]); ?>" class="aui-grid-row-item">
 									<i class="aui-icon-large aui-icon-sign"><img src="/Public/Upload/type/<?php echo ($h["pic"]); ?>" alt=""></i>
 									<p class="aui-grid-row-label"><?php echo ($h["tname"]); ?></p>
 								</a><?php endforeach; endif; ?>
@@ -69,7 +69,7 @@
 					<section class="aui-grid-content">
 						<div class="aui-grid-row aui-grid-row-clear">
 							<!--商品数据-->
-							<?php if(is_array($data)): foreach($data as $key=>$d): if(($d['pid'] == $v['id']) and ($d['type'] == 1)): ?><a href="#" class="aui-grid-row-item">
+							<?php if(is_array($data)): foreach($data as $key=>$d): if(($d['pid'] == $v['id']) and ($d['type'] == 1)): ?><a href="<?php echo U('typegoods');?>?id=<?php echo ($d["id"]); ?>" class="aui-grid-row-item">
 										<i class="aui-icon-large aui-icon-sign"><img src="/Public/Upload/type/<?php echo ($d["pic"]); ?>" alt=""></i>
 										<p class="aui-grid-row-label"><?php echo ($d["tname"]); ?></p>
 									</a><?php endif; endforeach; endif; ?>
