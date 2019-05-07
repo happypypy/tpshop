@@ -13,13 +13,13 @@ class IndexController extends Controller {
         //一层
         $this->goods_info=M('tp_goodsinfo')
             ->field('goodsname,price,pic,sale,id')
-            //->where('tid=5')
+            ->where('tid=13')
             ->limit(7)
             ->select();
         //二层
         $this->goodsy=M('tp_goodsinfo')
             ->field('goodsname,price,pic,sale,id')
-            //->where('tid=5')
+            ->where('tid=34')
             ->limit(7)
             ->select();
         //三层
@@ -31,7 +31,7 @@ class IndexController extends Controller {
         //四层
         $this->goodssf=M('tp_goodsinfo')
             ->field('goodsname,price,pic,sale,id')
-            //->where('tid=4')
+            ->where('tid=58')
             ->limit(7)
             ->select();
         //五层
@@ -40,7 +40,7 @@ class IndexController extends Controller {
             ->limit(20)
             ->select();
         $this->display();
-        
+
 
 
     }
