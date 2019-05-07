@@ -40,7 +40,7 @@ class IndexController extends Controller {
             ->limit(20)
             ->select();
         $this->display();
-        //商品详情
+        
 
 
     }
