@@ -250,7 +250,6 @@
          */
         !function ($) {
             var $tab = $('#J_Tab');
-
             $tab.tab({
                 nav: '.tab-nav-item',
                 panel: '.tab-panel-item',
