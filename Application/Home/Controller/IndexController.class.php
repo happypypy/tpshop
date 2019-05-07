@@ -39,6 +39,9 @@ class IndexController extends Controller {
             ->field('goodsname,price,pic,sale,id')
             ->limit(20)
             ->select();
+
+        //s搜索
+
         $this->display();
 
 
