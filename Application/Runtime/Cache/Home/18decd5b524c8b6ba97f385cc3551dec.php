@@ -75,14 +75,13 @@
 	</style>
 </head>
 <body style="background:#eee">
-
 	<header class="aui-header-default aui-header-fixed aui-header-bg">
 		<a href="javascript:history.back(-1)" class="aui-header-item">
 			<i class="aui-icon aui-icon-back-white"></i>
 		</a>
 		<div class="aui-header-center aui-header-center-clear">
 			<div class="aui-header-center-logo">
-				<div class="aui-car-white-Typeface">分类商品</div>
+				<div class="aui-car-white-Typeface">商品分类</div>
 			</div>
 		</div>
 		<a href="#" class="aui-header-item-icon"   style="min-width:0">
@@ -91,87 +90,38 @@
 	</header>
 	<section class="n-tabs">
 		<ul class="n-tabContainer" id="auto-id-1509603311057">
-			<li class="n-tabItem" data-id="homepage">
-				<a href="#" id="homepage" class="current">精选</a>
+			<li class="n-tabItem type" data-id="homepage" >
+				<a href="javascript:;" id="<?php echo ($type[0]['id']); ?>" class="current"><?php echo ($type[0]['tname']); ?></a>
 			</li>
-			<li class="n-tabItem" data-id="44114">
-				<a href="#" id="44114" class="">母婴</a>
-			</li>
-			<li class="n-tabItem" data-id="15394">
-				<a href="#" id="15394" class="">美妆</a>
-			</li>
-			<li class="n-tabItem" data-id="01436">
-				<a href="#" id="01436" class="">保健品</a>
-			</li>
-			<li class="n-tabItem" data-id="18211">
-				<a href="#" id="18211" class="">家居生活</a>
-			</li>
-			<li class="n-tabItem" data-id="83651">
-				<a href="#" id="83651" class="">生鲜</a>
-			</li>
-			<li class="n-tabItem" data-id="37957">
-				<a href="#" id="37957" class="">数码</a>
-			</li>
-			<li class="n-tabItem" data-id="74029">
-				<a href="#" id="74029" class="">个人洗护</a>
-			</li>
-			<li class="n-tabItem" data-id="73179">
-				<a href="#" id="73179" class="">海外直邮</a>
-			</li>
-			<li class="n-tabItem" data-id="41804">
-				<a href="#" id="41804" class="">服饰鞋靴</a>
-			</li>
+			<?php if(is_array($types)): foreach($types as $key=>$t): ?><li class="n-tabItem type" data-id="44114" >
+					<a href="javascript:;" id="<?php echo ($t["id"]); ?>" class=""><?php echo ($t["tname"]); ?></a>
+				</li><?php endforeach; endif; ?>
 		</ul>
 	</section>
 	<section class="aui-Purchase-content">
-		<div class="aui-list-product-box aui-list-product-box-clear">
-			<a href="javascript:;" class="aui-list-product-item">
-				<div class="aui-list-product-item-img">
-					<img src="/Public/Home/img/pd/sf-8.jpg" alt="">
-				</div>
-				<div class="aui-list-product-item-text">
-					<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-					<div class="aui-list-product-mes-box">
-						<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-							<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-						</div>
-						<div class="aui-comment">已销售134件</div>
+		<div class="aui-list-product-box aui-list-product-box-clear" id="con">
+			<?php if(is_array($data)): foreach($data as $key=>$d): ?><a href="javascript:;" class="aui-list-product-item">
+					<div class="aui-list-product-item-img">
+						<img src="/Public/Home/img/pd/sf-8.jpg" alt="">
 					</div>
-				</div>
-			</a>
+					<div class="aui-list-product-item-text">
+						<h3><?php echo ($d["goodsname"]); ?></h3>
+						<div class="aui-list-product-mes-box">
+							<div>
+								<span class="aui-list-product-item-price">
+									<em>¥</em>
+									<?php echo ($d["sale"]); ?>
+								</span>
+								<span class="aui-list-product-item-del-price">
+									¥<?php echo ($d["price"]); ?>
+								</span>
+							</div>
+							<div class="aui-comment">已销售<?php echo ($d["soldnum"]); ?>件</div>
+						</div>
+					</div>
+				</a><?php endforeach; endif; ?>
 		</div>
 	</section>
-	<section class="aui-Purchase-content">
-		<div class="aui-list-product-box aui-list-product-box-clear">
-			<a href="javascript:;" class="aui-list-product-item">
-				<div class="aui-list-product-item-img">
-					<img src="/Public/Home/img/pd/sf-8.jpg" alt="">
-				</div>
-				<div class="aui-list-product-item-text">
-					<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-					<div class="aui-list-product-mes-box">
-						<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-							<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-						</div>
-						<div class="aui-comment">已销售134件</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</section>
-
 	<script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/Public/Home/js/aui.js"></script>
 	<script type="text/javascript" >
@@ -197,6 +147,45 @@
                 console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
             });
         }(jQuery);
+
+        //上边分类的改变
+        //点击
+        $(document).ready(function(){
+            $(".type a").click(function() {
+                $(".type a").removeClass("current");
+                $(this).addClass("current");
+                id=$(this).attr('id');
+                $.get("<?php echo U('typeinfo');?>",{'id':id},function(res){
+                    var dataObj = res, //返回的result为json格式的数据
+						 con = "";
+                    $.each(dataObj, function(index, item){
+                        con += '<a href="javascript:;" class="aui-list-product-item">';
+                        con += '<div class="aui-list-product-item-img">';
+                        con += '<img src="/Public/Home/img/pd/sf-8.jpg" alt="">';
+                        con += '</div>';
+                        con += '<div class="aui-list-product-item-text">';
+                        con += '<h3>'+item.goodsname+'</h3>';
+                        con += '<div class="aui-list-product-mes-box">';
+                        con += '<div>';
+                        con += '<span class="aui-list-product-item-price">';
+                        con += '<em>¥</em>';
+                        con += item.sale;
+                        con += '</span>';
+                        con += ' <span class="aui-list-product-item-del-price">¥';
+                        con += item.price;
+                        con += '</span>';
+                        con += '</div>';
+                        con += '<div class="aui-comment">已销售'+item.soldnum+'件</div>';
+                        con += '</div>';
+                        con += '</div>';
+                        con += '</a>';
+					});
+                    //console.log(con);  //可以在控制台打印一下看看，这是拼起来的标签和数据
+                    $("#con").html(con); //把内容入到这个div中即完成
+            	})
+            })
+        });
+
 	</script>
 
 </body>
