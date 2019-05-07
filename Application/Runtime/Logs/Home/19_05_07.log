@@ -1,0 +1,105 @@
+[ 2019-05-07T08:33:54+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=11
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=11 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:33:58+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=12 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:33:59+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=13 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:01+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=14
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=14 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:02+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=15 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:04+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=17
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=17 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:04+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=17
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=17 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:07+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=18
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=18 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:12+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=17
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=17 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:13+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0196s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=15 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:13+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=14
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=14 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:14+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=13 )  [ RunTime:0.0000s ]
+
+[ 2019-05-07T08:34:15+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=12 )  [ RunTime:0.0156s ]
+
+[ 2019-05-07T08:34:16+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=11
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=11 )  [ RunTime:0.0000s ]
+
+[ 2019-05-07T08:34:18+08:00 ] 127.0.0.1 /Home/Type/typeinfo.html?id=16
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_goodsinfo` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`goodsname`,`goodsinfo`,`price`,`soldnum`,`sale`,`pic` FROM `tp_goodsinfo` WHERE ( tid=16 )  [ RunTime:0.0156s ]
+
