@@ -1,8 +1,21 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+
+/**
+ * 分类
+ * Class TypeController
+ * @package Home\Controller
+ */
 class TypeController extends Controller {
     public function index(){
+        $id=I("get.tid");
+        if($id){
+            $this->typeid=$id;
+            $this->indextype=M('tpGoodstype')->where("id=$id")
+                ->getField('tname');
+            $this->indexdata=M('tpGoodstype')->where("pid=$id")->select();
+        }
         //热门推荐类型
         $this->hot=M('tpGoodstype')->where("hot=1")->limit(9)->select();
         //左边商品类型
