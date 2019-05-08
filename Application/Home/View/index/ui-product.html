@@ -286,14 +286,12 @@
 			<div class="aui-product-pages-title">
 				<h2>图文详情</h2>
 			</div>
+            <foreach name="goodimg" item="v">
 			<div class="aui-product-pages-img">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp0.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp2.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp3.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp1.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp4.jpg" alt="">
+				<img src="__PUBLIC__/Upload/goods/{$v.pics}" alt="">
+
 			</div>
+            </foreach>
 		</div>
 		<div class="aui-recommend">
 			<img src="__PUBLIC__/Home/img/bg/icon-tj3.jpg" alt="">
