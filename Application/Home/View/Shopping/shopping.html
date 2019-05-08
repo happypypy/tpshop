@@ -21,7 +21,7 @@
 		</a>
 		<div class="aui-header-center aui-header-center-clear">
 			<div class="aui-header-center-logo">
-				<div class="aui-car-white-Typeface">购物车(6)</div>
+				<div class="aui-car-white-Typeface">购物车({$count})</div>
 			</div>
 		</div>
 		<a href="#" class="aui-header-item-icon"   style="min-width:0">
@@ -41,40 +41,44 @@
 				</div>
 			</div>
 			<div class="aui-car-box-list">
+                <foreach name="cart" item="v">
 				<ul>
 					<li>
 						<div class="aui-car-box-list-item">
 							<input type="checkbox" class="check goods-check goodsCheck">
 							<div class="aui-car-box-list-img">
-								<a href="ui-product.html">
-									<img src="__PUBLIC__/Home/img/pd/sf-1.jpg" alt="">
+								<a href="{:U('Index/goodsdata')}?id={$v.id}">
+									<img src="__PUBLIC__/Upload/goods/{$v.pic}" alt="">
 								</a>
 							</div>
+
 							<div class="aui-car-box-list-text">
 								<h4>
-									<a href="ui-product.html">【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</a>
+									<a href="ui-product.html">{$v.goodsname}</a>
 								</h4>
-								<div class="aui-car-box-list-text-brief">
-									<span>重量:3.3kg</span>
-									<span>颜色:标配版</span>
-									<span>版本:5.7英寸</span>
-								</div>
+								<!--<div class="aui-car-box-list-text-brief">-->
+									<!--&lt;!&ndash;<span>重量:3.3kg</span>&ndash;&gt;-->
+									<!--&lt;!&ndash;<span>颜色:标配版</span>&ndash;&gt;-->
+									<!--&lt;!&ndash;<span>版本:5.7英寸</span>&ndash;&gt;-->
+								<!--</div>-->
 								<div class="aui-car-box-list-text-price">
 									<div class="aui-car-box-list-text-pri">
-										￥<b class="price">100.00</b>
+										￥<b class="price">{$v.sale}</b>
 									</div>
 									<div class="aui-car-box-list-text-arithmetic">
 										<a href="javascript:;" class="minus">-</a>
-										<span class="num">1</span>
+										<span class="num">{$v.soldnum}</span>
 										<a href="javascript:;" class="plus">+</a>
 									</div>
 								</div>
 							</div>
 
+
 						</div>
 					</li>
 
 				</ul>
+                </foreach>
 			</div>
 			<div class="aui-shopPrice">
 				本店总计：￥
