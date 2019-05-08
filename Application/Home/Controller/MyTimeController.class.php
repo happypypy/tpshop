@@ -1,6 +1,12 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+
+/**
+ * 限时抢购
+ * Class MyTimeController
+ * @package Home\Controller
+ */
 class MyTimeController extends Controller {
     /**
      * 抢购首页
@@ -27,5 +33,46 @@ class MyTimeController extends Controller {
             ->where("goodsid=$id")
             ->select();
         $this->display();
+    }
+
+    //redis中缓存商品的信息
+    public $gnum=1;
+    public function setredis(){
+        $id=2;//用户ID
+        $gid=3;//商品ID
+        $gnum=1;//商品数量
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);
+        $num=10; //库存
+        $len=$redis->llen('id'); //返回列表的长度
+        $count = $num-$len; //实际库存-被抢购的库存 = 剩余可用库存
+        //剩余可用库存大于0，可以将数据存入list中
+        if($count>0){
+            $redis->lpush('id',$id);//从列表头部插入用户ID
+            $redis->lpush('gid',$gid);//从列表头部插入商品ID
+            $redis->lpush('num',$gnum);//从列表头部插入商品数量
+        }
+        echo $len;
+        //echo $count;
+        if(!$count) {
+            //echo '已经抢光了哦';
+            return '已经抢光了哦';
+        }
+        /* 下面处理抢购成功流程 */
+        //DB::table('goods')->decrement('num', 1);//减少num库存字段
+    }
+
+    public function getredis(){
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);
+        $len=$redis->llen('id'); //返回列表的长度
+        //取出list中的数据
+        for($i=0;$i<$len;$i++){
+            $data[$i]['id']=$redis->lpop('id');
+            $data[$i]['gid']=$redis->lpop('gid');
+            $data[$i]['num']=$redis->lpop('num');
+        }
+        echo '<pre>';
+        var_dump($data);
     }
 }
