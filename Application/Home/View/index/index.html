@@ -65,32 +65,39 @@
 			<div class="aui-slide-list">
 				<ul class="aui-slide-item-list">
 					<li class="aui-slide-item-item">
-						<a href="#" class="v-link">
+                        <!--食品-->
+						<a href="{:U('Type/index?')}tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-1.jpg">
 						</a>
+
 					</li>
 					<li class="aui-slide-item-item">
-						<a href="#" class="v-link">
+                        <!--家电-->
+						<a href="{:U('Type/index?')}tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-2.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
-						<a href="#" class="v-link">
+                        <!--母婴-->
+						<a href="{:U('Type/index')}?tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-3.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
-						<a href="#" class="v-link">
+                        <!--数码-->
+						<a href="{:U('Type/index')}?tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-4.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
-						<a href="#" class="v-link">
+                        <!--好书-->
+						<a href="{:U('Type/index')}?tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-5.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
-						<a href="#" class="v-link">
+                        <!--户外-->
+						<a href="{:U('Type/index')}?tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-6.jpg">
 						</a>
 					</li>
@@ -107,13 +114,15 @@
                 <div class="aui-slide-box">
                     <div class="aui-slide-list">
                         <ul class="aui-slide-item-list">
+
+                            <!--一层-->
                             <foreach name="goods_info" item="v">
                             <li class="aui-slide-item-item">
-                                <a href="ui-product.html" class="v-link">
-                                    <img class="v-img" src="__PUBLIC__/Home/goods/{$v.pic}">
+                                <a href="{:U('Index/goodsdata')}?id={$v.id}" class="v-link">
+                                    <img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
                                     <p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
                                     <p class="aui-slide-item-info">
-                                        <span class="aui-slide-item-price">{$v.price}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
+                                        <span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
                                     </p>
                                 </a>
                             </li>
@@ -130,13 +139,14 @@
 				<div class="aui-slide-box">
 					<div class="aui-slide-list">
 						<ul class="aui-slide-item-list">
+                            <!--二层-->
                             <foreach name="goodsy" item="v">
 							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/goods/{$v.pic}">
+								<a href="{:U('Index/goodsdata')}?id={$v.id}" class="v-link">
+									<img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
 									<p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
 									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">{$v.price}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
+										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
 									</p>
 								</a>
 							</li>
@@ -153,60 +163,18 @@
 				<div class="aui-slide-box">
 					<div class="aui-slide-list">
 						<ul class="aui-slide-item-list">
+                            <!--三层-->
+                            <foreach name="goodsyf" item="v">
 							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-25.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">LA 女士宽松毛衣纯色针织衫外套长袖上衣</p>
+								<a href="{:U('Index/goodsdata')}?id={$v.id}" class="v-link">
+									<img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
+									<p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
 									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥249</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥499</span>
+										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
 									</p>
 								</a>
 							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-26.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">FIRSTMIX秋季新款宽松圆领女式针织开衫</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥99</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥198</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-27.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">maxwin 马威 女式八分袖针织连衣裙</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥122.9</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥149</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-28.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">唯他可可 椰子水饮料 330毫升/盒 12盒</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥189</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥299</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-29.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">巴黎水 含气青柠味饮料 330毫升 24</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥129</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥199</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-30.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">calbee 卡乐比 日本进口休闲零食佳可比黄油味薯条 90克/盒</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥19.9</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥49</span>
-									</p>
-								</a>
-							</li>
+                            </foreach>
 						</ul>
 					</div>
 
@@ -219,51 +187,18 @@
 				<div class="aui-slide-box">
 					<div class="aui-slide-list">
 						<ul class="aui-slide-item-list">
+                            <!--四层-->
+                            <foreach name="goodssf" item="v">
 							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-20.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">nissen 凹凸纵横弹性沙发套</p>
+								<a href="{:U('Index/goodsdata')}?id={$v.id}" class="v-link">
+									<img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
+									<p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
 									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥31149</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥11499</span>
+										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥{$v.price}</span>
 									</p>
 								</a>
 							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-21.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">日本NITORI尼达利 三折坐垫 长毛条纹 浅棕 </p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥1199</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥1198</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-22.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">商城精选 对伴沙发</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥2399</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥9999</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-23.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">商城精选 韵白系列沙发三人位</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥9189</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥21299</span>
-									</p>
-								</a>
-							</li>
-							<li class="aui-slide-item-item">
-								<a href="ui-product.html" class="v-link">
-									<img class="v-img" src="__PUBLIC__/Home/img/pd/sf-24.jpg">
-									<p class="aui-slide-item-title aui-slide-item-f-els">商城精选 韵白系列沙发单人位</p>
-									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥2349</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥4199</span>
-									</p>
-								</a>
-							</li>
+                            </foreach>
 						</ul>
 					</div>
 
@@ -276,326 +211,29 @@
 		</div>
 		<section class="aui-list-product">
 			<div class="aui-list-product-box">
-				<a href="ui-product.html" class="aui-list-product-item">
+                <!--五层-->
+                <foreach name="goodsList" item="v">
+				<a href="{:U('Index/goodsdata')}?id={$v.id}" class="aui-list-product-item">
 					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-15.jpg" alt="">
+						<img src="__PUBLIC__/Upload/goods/{$v.pic}" alt="">
 					</div>
 					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
+						<h3>{$v.goodsname}</h3>
 						<div class="aui-list-product-mes-box">
 							<div>
 							<span class="aui-list-product-item-price">
 								<em>¥</em>
-								399.99
+								{$v.sale}
 							</span>
 								<span class="aui-list-product-item-del-price">
-								¥495.65
+								{$v.price}
 							</span>
 							</div>
 							<div class="aui-comment">986评论</div>
 						</div>
 					</div>
 				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-14.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-13.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-12.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-11.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-10.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-9.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-8.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-16.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-17.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-18.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-19.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-20.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-21.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-22.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
-				<a href="ui-product.html" class="aui-list-product-item">
-					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-23.jpg" alt="">
-					</div>
-					<div class="aui-list-product-item-text">
-						<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
-						<div class="aui-list-product-mes-box">
-							<div>
-							<span class="aui-list-product-item-price">
-								<em>¥</em>
-								399.99
-							</span>
-								<span class="aui-list-product-item-del-price">
-								¥495.65
-							</span>
-							</div>
-							<div class="aui-comment">986评论</div>
-						</div>
-					</div>
-				</a>
+                </foreach>
 			</div>
 		</section>
 	</div>
@@ -605,7 +243,7 @@
 			<span class="aui-footer-item-icon aui-icon aui-footer-icon-home"></span>
 			<span class="aui-footer-item-text">首页</span>
 		</a>
-		<a href="class.html" class="aui-footer-item">
+		<a href="{:U('Type/index')}" class="aui-footer-item">
 			<span class="aui-footer-item-icon aui-icon aui-footer-icon-class"></span>
 			<span class="aui-footer-item-text">分类</span>
 		</a>

@@ -1,0 +1,321 @@
+<include file="Common:header"/>
+    <title>我的订单</title>
+</head>
+<body>
+
+<header class="aui-header-default aui-header-fixed aui-header-bg">
+    <a href="javascript:history.back(-1)" class="aui-header-item">
+        <i class="aui-icon aui-icon-back-white"></i>
+    </a>
+    <div class="aui-header-center aui-header-center-clear">
+        <div class="aui-header-center-logo">
+            <div class="aui-car-white-Typeface">我的订单</div>
+        </div>
+    </div>
+    <a href="#" class="aui-header-item-icon"   style="min-width:0">
+        <i class="aui-icon aui-icon-search"></i>
+    </a>
+</header>
+<section class="aui-myOrder-content">
+    <div class="m-tab demo-small-pitch" data-ydui-tab>
+        <div class="aui-myOrder-fix">
+            <ul class="tab-nav">
+                <li class="tab-nav-item tab-active"><a href="javascript:;">全部</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">待付款</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">待发货</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">待收货</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">评价</a></li>
+            </ul>
+        </div>
+        <div class="aui-prompt"><i class="aui-icon aui-prompt-sm"></i>双十一期间发货及物流时效公告</div>
+        <div class="tab-panel">
+        <!--全部订单包括所有状态 -->
+            <div class="tab-panel-item tab-active">
+                <ul>
+                    <foreach name="data" item="v">
+                    <li>
+                        <div class="aui-list-title-info">
+                            <a href="#" class="aui-well ">
+                                <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                                <if condition="$v.state eq 2">
+                                <div class="aui-well-ft">已收货</div>
+                                <elseif condition="$v.state eq 1"/>
+                                <div class="aui-well-ft">待收货</div>
+                                <elseif condition="$v.state eq 3"/>
+                                <div class="aui-well-ft">待发货</div>
+                                <elseif condition="$v.state eq 4"/>
+                                <div class="aui-well-ft">交易失败</div>
+                                <elseif condition="$v.state eq 5"/>
+                                <div class="aui-well-ft">待付款</div>
+                                </if>
+                            </a>
+                            <foreach name="v['goods']" item="vv">
+                            <a href="javascript:;" class="aui-list-product-fl-item">
+                                <div class="aui-list-product-fl-img">
+                                    <img src="__PUBLIC__/Upload/goods/{$vv.pic}" alt="">
+                                </div>
+                                <div class="aui-list-product-fl-text">
+                                    <h3 class="aui-list-product-fl-title">{$vv.goodsname}</h3>
+                                    <div class="aui-list-product-fl-mes">
+                                        <div>
+									<span class="aui-list-product-item-price">
+										<em>¥</em>
+										{$vv.sale}
+									</span>
+									<span class="aui-list-product-item-del-price">
+										¥{$vv.price}
+									</span>
+                                        </div>
+                                        <div class="aui-btn-purchase">
+                                            x{$vv.num}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </foreach>
+                        </div>
+                        <if condition="$v.state eq 2">
+                            <div class="aui-list-title-btn">
+                                <a href="#">查看订单</a>
+                                <a href="#" class="red-color">评价</a>
+                            </div>
+                            <div class="aui-dri"></div>
+                            <elseif condition="$v.state eq 1"/>
+                            <div class="aui-list-title-btn">
+                                <a href="#">查看物流</a>
+                                <a href="#" class="red-color">确认收货</a>
+                            </div>
+                            <div class="aui-dri"></div>
+                            <elseif condition="$v.state eq 3"/>
+                            <div class="aui-list-title-btn">
+                                <a href="#">取消订单</a>
+                                <a href="#" class="red-color">催物流</a>
+                            </div>
+                            <div class="aui-dri"></div>
+                            <elseif condition="$v.state eq 4"/>
+                            <div class="aui-list-title-btn">
+                                <a href="#">删除订单</a>
+                            </div>
+                            <elseif condition="$v.state eq 5"/>
+                            <div class="aui-list-title-btn">
+                                <a href="#">取消订单</a>
+                                <a href="#" class="red-color">立即付款</a>
+                            </div>
+                        </if>
+                    </li>
+                    </foreach>
+                </ul>
+            </div>
+        <!--状态为待付款  state=5 -->
+            <div class="tab-panel-item">
+                <ul>
+                    <foreach name="data" item="v">
+                    <if condition="$v.state eq 5">
+                    <li>
+                        <div class="aui-list-title-info">
+                            <a href="#" class="aui-well ">
+                                <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                                <div class="aui-well-ft">待付款</div>
+                            </a>
+                            <foreach name="v['goods']" item="vv">
+                            <a href="javascript:;" class="aui-list-product-fl-item">
+                                <div class="aui-list-product-fl-img">
+                                    <img src="__PUBLIC__/Upload/goods/{$vv.pic}" alt="">
+                                </div>
+                                <div class="aui-list-product-fl-text">
+                                    <h3 class="aui-list-product-fl-title">{$vv.goodsname}</h3>
+                                    <div class="aui-list-product-fl-mes">
+                                        <div>
+									<span class="aui-list-product-item-price">
+										<em>¥</em>
+										{$vv.sale}
+									</span>
+                                    <span class="aui-list-product-item-del-price">
+										¥{$vv.price}
+									</span>
+                                        </div>
+                                        <div class="aui-btn-purchase">
+                                            x{$vv.num}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </foreach>
+                        </div>
+                        <div class="aui-list-title-btn">
+                            <a href="#">取消订单</a>
+                            <a href="#" class="red-color">立即付款</a>
+                        </div>
+                        <div class="aui-dri"></div>
+                    </li>
+                    </if>
+                    </foreach>
+                </ul>
+            </div>
+        <!--状态为待发货  state=3 -->
+            <div class="tab-panel-item">
+                <ul>
+                    <foreach name="data" item="v">
+                    <if condition="$v.state eq 3">
+                    <li>
+                        <div class="aui-list-title-info">
+                            <a href="#" class="aui-well ">
+                                <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                                <div class="aui-well-ft">待发货</div>
+                            </a>
+                            <foreach name="v['goods']" item="vv">
+                            <a href="javascript:;" class="aui-list-product-fl-item">
+                                <div class="aui-list-product-fl-img">
+                                    <img src="__PUBLIC__/Upload/goods/{$vv.pic}" alt="">
+                                </div>
+                                <div class="aui-list-product-fl-text">
+                                    <h3 class="aui-list-product-fl-title">{$vv.goodsname}</h3>
+                                    <div class="aui-list-product-fl-mes">
+                                        <div>
+									<span class="aui-list-product-item-price">
+										<em>¥</em>
+										{$vv.sale}
+									</span>
+									<span class="aui-list-product-item-del-price">
+										¥{$vv.price}
+									</span>
+                                        </div>
+                                        <div class="aui-btn-purchase">
+                                            x{$vv.num}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </foreach>
+                        </div>
+                        <div class="aui-list-title-btn">
+                            <a href="#">取消订单</a>
+                            <a href="#" class="red-color">催物流</a>
+                        </div>
+                        <div class="aui-dri"></div>
+                    </li>
+                    </if>
+                    </foreach>
+                </ul>
+            </div>
+        <!--状态为待收货  state=1 -->
+            <div class="tab-panel-item">
+                <ul>
+                    <foreach name="data" item="v">
+                    <if condition="$v.state eq 1">
+                    <li>
+                        <div class="aui-list-title-info">
+                            <a href="#" class="aui-well ">
+                                <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                                <div class="aui-well-ft">待收货</div>
+                            </a>
+                            <foreach name="v['goods']" item="vv">
+                            <a href="javascript:;" class="aui-list-product-fl-item">
+                                <div class="aui-list-product-fl-img">
+                                    <img src="__PUBLIC__/Upload/goods/{$vv.pic}" alt="">
+                                </div>
+                                <div class="aui-list-product-fl-text">
+                                    <h3 class="aui-list-product-fl-title">{$vv.goodsname}</h3>
+                                    <div class="aui-list-product-fl-mes">
+                                        <div>
+									<span class="aui-list-product-item-price">
+										<em>¥</em>
+										{$vv.sale}
+									</span>
+									<span class="aui-list-product-item-del-price">
+										¥{$vv.price}
+									</span>
+                                        </div>
+                                        <div class="aui-btn-purchase">
+                                            x{$vv.num}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </foreach>
+                        </div>
+                        <div class="aui-list-title-btn">
+                            <a href="#">查看物流</a>
+                            <a href="#" class="red-color">确认收货</a>
+                        </div>
+                        <div class="aui-dri"></div>
+                    </li>
+                    </if>
+                    </foreach>
+                </ul>
+            </div>
+        <!--状态为已收货  state=2 -->
+            <div class="tab-panel-item">
+                <ul>
+                    <foreach name="data" item="v">
+                    <if condition="$v.state eq 2">
+                    <li>
+                        <div class="aui-list-title-info">
+                            <a href="#" class="aui-well ">
+                                <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                                <div class="aui-well-ft">已收货</div>
+                            </a>
+                            <foreach name="v['goods']" item="vv">
+                            <a href="javascript:;" class="aui-list-product-fl-item">
+                                <div class="aui-list-product-fl-img">
+                                    <img src="__PUBLIC__/Upload/goods/{$vv.pic}" alt="">
+                                </div>
+                                <div class="aui-list-product-fl-text">
+                                    <h3 class="aui-list-product-fl-title">{$vv.goodsname}</h3>
+                                    <div class="aui-list-product-fl-mes">
+                                        <div>
+									<span class="aui-list-product-item-price">
+										<em>¥</em>
+										{$vv.sale}
+									</span>
+									<span class="aui-list-product-item-del-price">
+										¥{$vv.price}
+									</span>
+                                        </div>
+                                        <div class="aui-btn-purchase">
+                                            x{$vv.num}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </foreach>
+                        </div>
+                        <div class="aui-list-title-btn">
+                            <a href="#">查看订单</a>
+                            <a href="#" class="red-color">评价</a>
+                        </div>
+                        <div class="aui-dri"></div>
+                    </li>
+                    </if>
+                    </foreach>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/aui.js"></script>
+<script type="text/javascript" >
+    /**
+     * Javascript API调用Tab
+     */
+    !function ($) {
+        var $tab = $('#J_Tab');
+        $tab.tab({
+            nav: '.tab-nav-item',
+            panel: '.tab-panel-item',
+            activeClass: 'tab-active'
+        });
+        /*
+         $tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
+         console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
+         });
+         */
+        $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
+            console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
+        });
+    }(jQuery);
+</script>
+
+</body>
+</html>
