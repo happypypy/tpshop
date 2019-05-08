@@ -15,12 +15,14 @@ class LoginController extends Controller {
             $data['password']=$phone['password'];
             $find=$mem->where($data)->select();
             //获取id值存入session
-            $id=$find['0']['uid'];
-            session('uid',$id);
+            $uid=$find['0']['uid'];
+            session('uid',$uid);
             //判断对比数据库结果
             if($find){
-              //dump($id=session('uid'));
-                $this->display('index:index');
+              //$id=session('uid');
+//               $this->display('index:index');
+                $this->redirect("Index/index");
+
             }else{
                 echo "账户或密码错误";
             }
@@ -49,7 +51,7 @@ class LoginController extends Controller {
             $data['password'] =$phone['password'];
             //执行添加
             $mem->add($data);
-            $this->display('index:index');
+            $this->redirect('Index/index');
         }else{
 
           $this->display();
