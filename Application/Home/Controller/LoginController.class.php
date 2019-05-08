@@ -14,8 +14,10 @@ class LoginController extends Controller {
             $data['uname']=$phone['uname'];
             $data['password']=$phone['password'];
             $find=$mem->where($data)->select();
+            //获取id值存入session
             $id=$find['0']['uid'];
             session('uid',$id);
+            //判断对比数据库结果
             if($find){
               //dump($id=session('uid'));
                 $this->display('index:index');
@@ -39,12 +41,13 @@ class LoginController extends Controller {
             //接受数据
             $phone = I('post.');
             //     dump($phone['phone']);
-            //执行数据库添加
+            //获取数据
             $mem = M('member');
             $data['uname'] =$phone['uname'];
             $data['phone'] = $phone['phone'];
             $data['code'] = $phone['code'];
             $data['password'] =$phone['password'];
+            //执行添加
             $mem->add($data);
             $this->display('index:index');
         }else{

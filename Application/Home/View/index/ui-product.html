@@ -286,14 +286,12 @@
 			<div class="aui-product-pages-title">
 				<h2>图文详情</h2>
 			</div>
+            <foreach name="goodimg" item="v">
 			<div class="aui-product-pages-img">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp0.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp2.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp3.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp1.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp.jpg" alt="">
-				<img src="__PUBLIC__/Home/img/pd/pd-cp4.jpg" alt="">
+				<img src="__PUBLIC__/Upload/goods/{$v.pics}" alt="">
+
 			</div>
+            </foreach>
 		</div>
 		<div class="aui-recommend">
 			<img src="__PUBLIC__/Home/img/bg/icon-tj3.jpg" alt="">
@@ -347,12 +345,12 @@
 				</a>
 			</div>
 			<div class="aui-footer-product-action-list">
-				<a href="car.html" class="yellow-color">加入购物车</a>
+				<a href="{:U('Home/shopping/shopping')}?goodsid=goodsid" class="yellow-color">加入购物车</a>
 				<a href="order.html" class="red-color">立即购买</a>
 			</div>
 		</div>
 	</footer>
-
+            
 	<script src="__PUBLIC__/Home/js/jquery.min.js"></script>
 	<script src="__PUBLIC__/Home/js/aui.js"></script>
 	<script src="__PUBLIC__/Home/js/aui-down.js"></script>
