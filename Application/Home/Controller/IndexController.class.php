@@ -82,9 +82,7 @@ class IndexController extends Controller {
             ->where("id=$id")
             ->select();
         $goodsid=$goods['0']['id'];
-
-        session('goodsid',$goodsid);
-        $a=session('goodsid');
+        $a=$goodsid;
 
 
         $this->goodsyf=M('tp_goodsinfo')
