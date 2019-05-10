@@ -20,7 +20,7 @@ class LoginController extends Controller {
             //判断对比数据库结果
             if($find){
               //$id=session('uid');
-//               $this->display('index:index');
+             // $this->display('index:index');
                 $this->redirect("Index/index");
 
             }else{
