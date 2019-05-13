@@ -81,8 +81,10 @@ class IndexController extends Controller {
             ->field('goodsname,price,sale,id')
             ->where("id=$id")
             ->select();
-        $goodsid=$goods['0']['id'];
+        $goodsid=$goods['0'];
         $a=$goodsid;
+        //dump($a);
+        //die;
 
 
         $this->goodsyf=M('tp_goodsinfo')
