@@ -83,7 +83,7 @@ class IndexController extends Controller {
             ->select();
         $goodsid=$goods['0'];
         $a=$goodsid['id'];
-        
+
 
 
         $this->goodsyf=M('tp_goodsinfo')
