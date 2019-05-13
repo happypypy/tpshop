@@ -26,7 +26,7 @@ class ShoppingController extends Controller{
     //加入购物车操作
     function addcart(){
         $cart=M('cart_list');
-        $data['goodsid']=$goodsid=I('get.id');
+        $data['goodsid']=$goodsid=I('get.tid');
          $data['uid']=$uid=session('uid');
         //查询数据库里有没有
         $if=$cart->where($data)->select();
@@ -35,7 +35,7 @@ class ShoppingController extends Controller{
         }else{
         $cart->add($data);
     }
-        $this->redirect("Shopping/shopping");
+        //$this->redirect("Shopping/shopping");
     }
 
       //删除购物车操作
