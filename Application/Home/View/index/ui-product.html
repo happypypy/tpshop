@@ -211,7 +211,7 @@
 					</div>
 					<a href="javascript:;" class="actionsheet-action" id="cancel">关闭</a>
 					<div class="aui-product-function">
-						<a href="car.html" class="yellow-color">加入购物车</a>
+						<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata" onclick="cart()">加入购物车</a>
 						<a href="order.html" class="red-color">立即购买</a>
 					</div>
 
@@ -350,7 +350,7 @@
 				</a>
 			</div>
 			<div class="aui-footer-product-action-list">
-				<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata">加入购物车</a>
+				<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata" onclick="cart()">加入购物车</a>
 				<a href="order.html" class="red-color">立即购买</a>
 			</div>
 		</div>
@@ -416,6 +416,10 @@
         },"text");
 
     });
+
+    function cart(){
+        layer.msg('加入购物车成功');
+    }
 
 </script>
 
