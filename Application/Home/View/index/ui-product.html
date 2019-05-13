@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="__PUBLIC__/Home/css/home.css">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link href="__PUBLIC__/Home/iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <script src="__PUBLIC__Home/js/layer/layer.js"></script>
+    <script src="__PUBLIC__Home/Login/jquery.min.1.8.2.js"></script>
 	<style>
 		.m-button {
 			padding: 0 0.24rem;
@@ -347,7 +349,7 @@
 				</a>
 			</div>
 			<div class="aui-footer-product-action-list">
-				<a href="{:U('Home/Shopping/addcart')}?id={$a}" class="yellow-color">加入购物车</a>
+				<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata">加入购物车</a>
 				<a href="order.html" class="red-color">立即购买</a>
 			</div>
 		</div>
@@ -401,7 +403,20 @@
             });
 
         }(jQuery);
+
+
 	</script>
+<script>
+    $('.goodsdata').click(function(){
+        obj=$(this);
+        tid=obj.attr('tid');
+        $.get("{:U('Home/Shopping/addcart')}",{'tid':tid},function(){
+
+        },"text");
+
+    });
+
+</script>
 
 
 </body>
