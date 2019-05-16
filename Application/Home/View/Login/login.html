@@ -10,26 +10,27 @@
 <link rel="stylesheet" href="__PUBLIC__/Login/lib/weui.min.css">
 <link rel="stylesheet" href="__PUBLIC__/Login/css/jquery-weui.css">
 <link rel="stylesheet" href="__PUBLIC__/Login/css/style.css">
+<script src="{:U('__PUBLIC__/Home/js')}/jquery.min.1.8.2.js" type="text/javascript"></script>
 </head>
 <body ontouchstart style="background:#323542;">
 <!--主体-->
 <div class="login-box">
   	<div class="lg-title">欢迎来到优品商城</div>
     <div class="login-form">
-    	<form action="#">
+    	<form action="{:U('Home/Login/login')}" method="post">
         	<div class="login-user-name common-div">
             	<span class="eamil-icon common-icon">
                 	<img src="__PUBLIC__/Login/images/eamil.png" />
                 </span>
-                <input type="email" name="username" value="" placeholder="请输入您的手机号" />        
+                <input type="text" name="uname" value="" placeholder="请输入您的用户/手机号" />
             </div>
             <div class="login-user-pasw common-div">
             	<span class="pasw-icon common-icon">
                 	<img src="__PUBLIC__/Login/images/password.png" />
                 </span>
-                <input type="password" name="password" value="" placeholder="请输入您的密码" />        
+                <input type="password" name="password" value="" placeholder="请输入您的密码" />
             </div>
-            <a href="javascript:;" class="login-btn common-div">登陆</a>
+          <span ><input type="submit" class="login-btn common-div" value="登录"></span>
             <a href="javascript:;" class="login-oth-btn common-div">微信登陆</a>
             <a href="javascript:;" class="login-oth-btn common-div">QQ登陆</a>
         </form>

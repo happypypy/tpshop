@@ -90,10 +90,10 @@
 	</section>
 	<section class="aui-Purchase-content">
 		<div class="aui-list-product-box aui-list-product-box-clear" id="con">
-			<foreach name="data" item="d" class="goods">
-				<a href="javascript:;" class="aui-list-product-item">
+			<foreach name="data" item="d">
+				<a href="{:U('Home/Index/goodsdata')}?id={$d.id}" class="aui-list-product-item">
 					<div class="aui-list-product-item-img">
-						<img src="__PUBLIC__/Home/img/pd/sf-8.jpg" alt="">
+						<img src="__PUBLIC__/Upload/goods/{$d.pic}" style="height:199.5px;width:199.5px;" alt="">
 					</div>
 					<div class="aui-list-product-item-text">
 						<h3>{$d.goodsname}</h3>
@@ -151,9 +151,11 @@
                     var dataObj = res, //返回的result为json格式的数据
 						 con = "";
                     $.each(dataObj, function(index, item){
-                        con += '<a href="javascript:;" class="aui-list-product-item">';
+                        con += '<a href="{:U(\'Home/Index/goodsdata\')}?id='+item.id+'" class="aui-list-product-item">';
                         con += '<div class="aui-list-product-item-img">';
-                        con += '<img src="__PUBLIC__/Home/img/pd/sf-8.jpg" alt="">';
+                        con += '<img src="';
+                        con += "__PUBLIC__/Upload/goods/"+item.pic;
+                        con += '" style="height:199.5px;width:199.5px; alt="">';
                         con += '</div>';
                         con += '<div class="aui-list-product-item-text">';
                         con += '<h3>'+item.goodsname+'</h3>';
@@ -172,7 +174,6 @@
                         con += '</div>';
                         con += '</a>';
 					});
-                    //console.log(con);  //可以在控制台打印一下看看，这是拼起来的标签和数据
                     $("#con").html(con); //把内容入到这个div中即完成
             	})
             })

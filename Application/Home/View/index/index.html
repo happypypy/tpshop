@@ -9,8 +9,11 @@
 		</a>
 		<div class="aui-header-center aui-header-center-clear">
 			<div class="aui-header-search-box">
-				<i class="aui-icon aui-icon-small-search"></i>
-				<input id="" type="text"  placeholder="iphone8 手机钢化膜" class="aui-header-search">
+				<!--<i class="aui-icon aui-icon-small-search"></i>-->
+                <form method="post" action="{:U('Index/index')}">
+				<input id="" type="text"  placeholder="iphonex 手机钢化膜" class="aui-header-search" name="goodsname">
+                <input type="submit" name="" style="color:transparent; border: 0px solid #000" class="aui-icon aui-icon-small-search">
+                </form>
 			</div>
 		</div>
 		<a href="#" class="aui-header-item-icon">
@@ -66,38 +69,38 @@
 				<ul class="aui-slide-item-list">
 					<li class="aui-slide-item-item">
                         <!--食品-->
-						<a href="{:U('Type/index?')}tid=5" class="v-link">
+						<a href="{:U('Type/index')}?tid=5" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-1.jpg">
 						</a>
 
 					</li>
 					<li class="aui-slide-item-item">
                         <!--家电-->
-						<a href="{:U('Type/index?')}tid=5" class="v-link">
+						<a href="{:U('Type/index')}?tid=7" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-2.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
                         <!--母婴-->
-						<a href="{:U('Type/index')}?tid=5" class="v-link">
+						<a href="{:U('Type/index')}?tid=2" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-3.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
                         <!--数码-->
-						<a href="{:U('Type/index')}?tid=5" class="v-link">
+						<a href="{:U('Type/index')}?tid=7" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-4.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
                         <!--好书-->
-						<a href="{:U('Type/index')}?tid=5" class="v-link">
+						<a href="{:U('Type/index')}?tid=59" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-5.jpg">
 						</a>
 					</li>
 					<li class="aui-slide-item-item">
                         <!--户外-->
-						<a href="{:U('Type/index')}?tid=5" class="v-link">
+						<a href="{:U('Type/index')}?tid=8" class="v-link">
 							<img class="v-img" src="__PUBLIC__/Home/img/ad/tou-6.jpg">
 						</a>
 					</li>
@@ -108,9 +111,11 @@
 		<div class="aui-dri"></div>
 		<div class="aui-list-content">
 			<div class="aui-list-item">
+                <foreach name="goodsa" item="v">
 				<div class="aui-list-item-img">
-					<img src="__PUBLIC__/Home/img/pd/cf-4.jpg" alt="">
+					<img src="__PUBLIC__/Upload/goods/{$v.ad_pic}" alt="">
 				</div>
+                </foreach>
                 <div class="aui-slide-box">
                     <div class="aui-slide-list">
                         <ul class="aui-slide-item-list">
@@ -122,7 +127,7 @@
                                     <img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
                                     <p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
                                     <p class="aui-slide-item-info">
-                                        <span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
+                                        <span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥{$v.price}</span>
                                     </p>
                                 </a>
                             </li>
@@ -133,9 +138,11 @@
                 </div>
             </div>
 			<div class="aui-list-item">
+                <foreach name="goodsad" item="v">
 				<div class="aui-list-item-img">
-					<img src="__PUBLIC__/Home/img/pd/cf-5.jpg" alt="">
+					<img src="__PUBLIC__/Upload/goods/{$v.ad_pic}" alt="">
 				</div>
+                </foreach>
 				<div class="aui-slide-box">
 					<div class="aui-slide-list">
 						<ul class="aui-slide-item-list">
@@ -146,7 +153,7 @@
 									<img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
 									<p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
 									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
+										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥{$v.price}</span>
 									</p>
 								</a>
 							</li>
@@ -157,9 +164,11 @@
 				</div>
 			</div>
 			<div class="aui-list-item">
+                <foreach name="goodsadd" item="v">
 				<div class="aui-list-item-img">
-					<img src="__PUBLIC__/Home/img/pd/cf-7.jpg" alt="">
+					<img src="__PUBLIC__/Upload/goods/{$v.ad_pic}" alt="">
 				</div>
+                </foreach>
 				<div class="aui-slide-box">
 					<div class="aui-slide-list">
 						<ul class="aui-slide-item-list">
@@ -170,7 +179,7 @@
 									<img class="v-img" src="__PUBLIC__/Upload/goods/{$v.pic}">
 									<p class="aui-slide-item-title aui-slide-item-f-els">{$v.goodsname}</p>
 									<p class="aui-slide-item-info">
-										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">{$v.price}</span>
+										<span class="aui-slide-item-price">¥{$v.sale}</span>&nbsp;&nbsp;<span class="aui-slide-item-mrk">¥{$v.price}</span>
 									</p>
 								</a>
 							</li>
@@ -181,9 +190,11 @@
 				</div>
 			</div>
 			<div class="aui-list-item">
+                <foreach name="goodsaddd" item="v">
 				<div class="aui-list-item-img">
-					<img src="__PUBLIC__/Home/img/pd/cf-6.jpg" alt="">
+					<img src="__PUBLIC__/Upload/goods/{$v.ad_pic}" alt="">
 				</div>
+                </foreach>
 				<div class="aui-slide-box">
 					<div class="aui-slide-list">
 						<ul class="aui-slide-item-list">
@@ -226,7 +237,7 @@
 								{$v.sale}
 							</span>
 								<span class="aui-list-product-item-del-price">
-								{$v.price}
+								¥{$v.price}
 							</span>
 							</div>
 							<div class="aui-comment">986评论</div>
@@ -251,7 +262,7 @@
 			<span class="aui-footer-item-icon aui-icon aui-footer-icon-find"></span>
 			<span class="aui-footer-item-text">发现</span>
 		</a>
-		<a href="car.html" class="aui-footer-item">
+		<a href="{:U('Home/shopping/shopping')}" class="aui-footer-item">
 			<span class="aui-footer-item-icon aui-icon aui-footer-icon-car"></span>
 			<span class="aui-footer-item-text">购物车</span>
 		</a>

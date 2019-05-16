@@ -13,7 +13,7 @@ class IndexController extends Controller {
         //一层
         $this->goods_info=M('tp_goodsinfo')
             ->field('goodsname,price,pic,sale,id')
-            ->where('tid=13')
+            ->where('tid=13 or tid=11')
             ->limit(7)
             ->select();
         //二层
@@ -35,18 +35,41 @@ class IndexController extends Controller {
             ->limit(7)
             ->select();
         //五层
-        $this->goodsList=M('tp_goodsinfo')
-            ->field('goodsname,price,pic,sale,id')
-            ->limit(20)
+        $goodsname=I('post.goodsname');
+        $data['goodsname']=array('like',"%$goodsname%");
+        if($goodsname){
+            $this->goodsList=M('tp_goodsinfo')
+                ->field('goodsname,price,pic,sale,id')
+                ->where($data)
+                ->limit(20)
+                ->select();
+        }else{
+            $this->goodsList=M('tp_goodsinfo')
+                ->field('goodsname,price,pic,sale,id')
+                ->limit(20)
+                ->select();
+        }
+        //广告图片
+        $this->goodsa=M('tp_goodsad')
+            ->where('id=1')
+            ->select();
+        $this->goodsad=M('tp_goodsad')
+            ->where('id=2')
+            ->select();
+        $this->goodsadd=M('tp_goodsad')
+            ->where('id=3')
+            ->select();
+        $this->goodsaddd=M('tp_goodsad')
+            ->where('id=4')
             ->select();
 
-        //s搜索
+
+
 
         $this->display();
-
-
-
     }
+
+
     public function goodsdata(){
          $id=I('get.id');
         $goodimg=M('tp_goodsimages')
@@ -55,9 +78,14 @@ class IndexController extends Controller {
             ->select();
            // dump($goodimg);
         $goods=M('tp_goodsinfo')
-            ->field('goodsname,price,sale')
+            ->field('goodsname,price,sale,id')
             ->where("id=$id")
             ->select();
+        $goodsid=$goods['0'];
+        $a=$goodsid['id'];
+
+
+
         $this->goodsyf=M('tp_goodsinfo')
             ->field('goodsname,price,pic,sale,id')
             ->limit(7)
@@ -67,7 +95,9 @@ class IndexController extends Controller {
             ->field('goodsname,price,pic,sale,id')
             ->limit(20)
             ->select();
+
         $this->assign('goods',$goods);
+        $this->assign('a',$a);
         $this->assign('goodimg',$goodimg);
         $this->display("index/ui-product");
 

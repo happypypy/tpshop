@@ -193,8 +193,8 @@
 				</div>
 				<a href="javascript:;" class="actionsheet-action" id="cancel">关闭</a>
 				<div class="aui-product-function">
-					<a href="car.html" class="yellow-color">加入购物车</a>
-					<a href="order.html" class="red-color">立即购买</a>
+					<!--<a href="car.html" class="yellow-color">加入购物车</a>-->
+					<a href="跳转到下单页面" class="red-color">立即购买</a>
 				</div>
 
 			</div>
@@ -222,7 +222,7 @@
 	<div class="aui-dri"></div>
 	<div class="aui-product-evaluate">
 		<a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
-			<div class="aui-address-cell-bd">商品评价   <em>(3290)</em></div>
+			<div class="aui-address-cell-bd">商品评价<em>(3290)</em></div>
 			<div class="aui-address-cell-ft">
 				<span>好评 100%</span>
 			</div>
@@ -678,8 +678,9 @@
 			</a>
 		</div>
 		<div class="aui-footer-product-action-list">
-			<a href="car.html" class="yellow-color">加入购物车</a>
-			<a href="order.html" class="red-color">立即购买</a>
+			<a title="编辑"  href ="javascript:return false;" onclick="return false;" style="cursor: default;"><i class="edit" style="opacity: 0.2"></i></a>
+			<!--<a href="car.html" class="yellow-color">加入购物车</a>-->
+			<a href="{:U('order')}?id=" class="red-color">立即购买</a>
 		</div>
 	</div>
 </footer>
@@ -689,7 +690,6 @@
 <script src="__PUBLIC__/Home/js/aui-down.js"></script>
 <script type="text/javascript">
     $(function () {
-        //绑定滚动条事件
         //绑定滚动条事件
         $(window).bind("scroll", function () {
             var sTop = $(window).scrollTop();
