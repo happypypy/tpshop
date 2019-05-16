@@ -40,7 +40,7 @@ class MyTimeController extends Controller {
         $id=I("get.id");
         $this->setredis($id);
         $this->goods=M('tpGoodsinfo')
-            ->field('id,goodsname,goodsinfo,price,buynum,buytime,buyprice,pic')
+            ->field('id,goodsname,goodsinfo,price,buytime,buyprice,pic')
             ->where("id=$id")
             ->select();
         $this->display();
@@ -48,7 +48,15 @@ class MyTimeController extends Controller {
 
     //提交订单
     public function submitOrder(){
-
+        $id=I("get.id");
+        $data['ordersn']=date('YmdHis').rand(100,999);
+        $data['gid']=$id;//商品ID
+        $data['price']=M('tpGoodsinfo')->where("id=$id")
+            ->getfield('buyprice');
+        $data['num']=1;
+        M('tpOrderconnect')->add($data);
+        $this->assign('data',$data);
+        $this->display();
     }
 
     //redis中缓存商品的信息
@@ -56,7 +64,6 @@ class MyTimeController extends Controller {
         $id=2;//用户ID
         $gnum=1;//商品数量
         $num=M('tpGoodsinfo')->where("id=$gid")->getfield('buynum');//库存
-        dump($num);
         $redis = new \Redis();
         $redis->connect('127.0.0.1', 6379);
         $len=$redis->llen('id'); //返回列表的长度

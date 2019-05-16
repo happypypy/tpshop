@@ -115,7 +115,7 @@
 			<div class="shop-total">
 				<span class="aui-red aui-size">实付款: <em>￥{$goods[0]['buyprice']}.00</em></span>
 			</div>
-			<a href="{:U('submitOrder')}" class="settlement">提交订单</a>
+			<a href="{:U('submitOrder')}?id={$goods[0]['id']}" class="settlement">提交订单</a>
 		</div>
 	</section>
 
