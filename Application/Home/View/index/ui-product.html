@@ -202,12 +202,15 @@
 				<div class="aui-address-cell-ft">颜色分类</div>
 			</a>
 			<div class="m-actionsheet" id="actionSheet">
+                <form>
 				<div style="position:relative">
+					<div style="height:100px;">
 
-					<div style="height:400px;">
-						<h3>
-							内容填充
-						</h3>
+                            <div style="margin-top: 50px">
+                            <input class="jian" name="" type="button" value="-" style="width: 20px"/>
+                            <input class="text_box" name="goodnum" type="text" value="1" style="width:25px;" />
+                            <input class="add" name="" type="button" value="+" style="width: 20px"/>
+                            </div>
 					</div>
 					<a href="javascript:;" class="actionsheet-action" id="cancel">关闭</a>
 					<div class="aui-product-function">
@@ -216,8 +219,9 @@
 					</div>
 
 				</div>
+                </form>
 			</div>
-			<a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+			<a href="{:U('Index/cheap',array('id'=>1,'idd'=>2,'iddd'=>3))}" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
 				<div class="aui-address-cell-bd">领券</div>
 				<div class="aui-address-cell-ft">
 					<span>满159减10券</span>
@@ -420,6 +424,22 @@
     function cart(){
         layer.msg('加入购物车成功');
     }
+
+    $(document).ready(function(){
+        //加的效果
+        $(".add").click(function(){
+            var n=$(this).prev().val();
+            var num=parseInt(n)+1;
+            if(num==0){ return;}
+            $(this).prev().val(num);
+        });
+        //减的效果
+        $(".jian").click(function(){
+            var n=$(this).next().val();
+            var num=parseInt(n)-1;
+            if(num==0){ return}
+            $(this).next().val(num);
+        });});
 
 </script>
 
