@@ -80,4 +80,11 @@ class OrderController extends Controller{
         $res=M("orders")->where("ordersn='$ordersn'")->delete();//返回的是受影响行数,错误返回false
         //dump($res);
     }
+//订单详情
+    public function orderdetail(){
+        //下单地址信息
+        //$uid=session('id');//获取会员id
+
+        $this->display();
+    }
 }

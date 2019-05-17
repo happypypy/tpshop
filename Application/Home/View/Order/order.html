@@ -1,5 +1,6 @@
 <include file="Common:header"/>
 <script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+<script src="__PUBLIC__/Home/js/layer/layer.js"></script>
     <title>我的订单</title>
 </head>
 <body>
@@ -91,7 +92,7 @@
                             <elseif condition="$v.state eq 3"/>
                             <div class="aui-list-title-btn">
                                 <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">取消订单</a>
-                                <a href="#" class="red-color">催物流</a>
+                                <a href="javasctipt:;" class="red-color tell">催物流</a>
                             </div>
                             <div class="aui-dri"></div>
                             <elseif condition="$v.state eq 4"/>
@@ -100,7 +101,7 @@
                             </div>
                             <elseif condition="$v.state eq 5"/>
                             <div class="aui-list-title-btn">
-                                <a href="#">取消订单</a>
+                                <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">取消订单</a>
                                 <a href="#" class="red-color">立即付款</a>
                             </div>
                         </if>
@@ -193,7 +194,7 @@
                         </div>
                         <div class="aui-list-title-btn">
                             <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">取消订单</a>
-                            <a href="#" class="red-color">催物流</a>
+                            <a href="javasctipt:;" class="red-color tell">催物流</a>
                         </div>
                         <div class="aui-dri"></div>
                     </li>
@@ -329,6 +330,18 @@
             console.log(res);
             obj.parent().parent().remove();
         }, "text");
+    })
+//催物流
+    var count=0;
+    $(document).ready(function(){
+        $(".tell").click(function(){
+            obj=$(this);
+            layer.msg("已提示卖家尽快发货");
+            count+=1;
+            if(count>5){
+                layer.msg("今日提醒已达上限");
+            }
+        })
     })
 
 </script>
