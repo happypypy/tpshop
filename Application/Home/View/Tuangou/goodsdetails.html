@@ -1,0 +1,365 @@
+<include file="Common:header"/>
+<title>商品详情</title>
+<style>
+    .m-button {
+        padding: 0 0.24rem;
+    }
+
+    .btn-block {
+        text-align: center;
+        position: relative;
+        border: none;
+        pointer-events: auto;
+        width: 100%;
+        display: block;
+        font-size: 1rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        margin-top: 0.5rem;
+        border-radius: 3px;
+    }
+
+    .btn-primary {
+        background-color: #04BE02;
+        color: #FFF;
+    }
+
+    .btn-warning {
+        background-color: #FFB400;
+        color: #FFF;
+    }
+    .mask-black {
+        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        z-index:999;
+    }
+
+    .m-actionsheet {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #EFEFF4;
+        -webkit-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+        -webkit-transition: -webkit-transform .3s;
+        transition: -webkit-transform .3s;
+        transition: transform .3s;
+        transition: transform .3s, -webkit-transform .3s;
+    }
+    .actionsheet-toggle {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    .actionsheet-item {
+        display: block;
+        position: relative;
+        font-size: 0.8rem;
+        color: #555;
+        height: 2rem;
+        line-height: 2rem;
+        background-color: #FFF;
+    }
+    .actionsheet-item:after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid #D9D9D9;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+    }
+    .actionsheet-action {
+        display: block;
+        margin-top: .15rem;
+        font-size: 0.8rem;
+        color: #555;
+        height:3rem;
+        line-height: 3rem;
+        background-color: #FFF;
+        position:absolute;
+        top:10px;
+        right:0;
+    }
+</style>
+</head>
+<body>
+<header class="aui-header-default aui-header-fixed aui-header-bg">
+    <a href="javascript:history.back(-1)" class="aui-header-item">
+        <i class="aui-icon aui-icon-back-white"></i>
+    </a>
+    <div class="aui-header-center aui-header-center-clear">
+        <div class="aui-header-center-logo">
+            <div id="scrollSearchPro">
+                <span class="current">商品</span>
+                <span>评价</span>
+                <span>详情</span>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:;" class="aui-header-item-icon select" style="min-width:0;">
+        <i class="aui-icon aui-icon-share-pd selectVal" onselectstart="return false"></i>
+        <div class="aui-header-drop-down selectList">
+            <div class="aui-header-drop-down-san"></div>
+            <div class="">
+                <p class="" onclick="location='http://www.a-ui.cn/'" >消息</p>
+                <p class="" onclick="location='index.html'">首页</p>
+                <p class="" onclick="location='index.html'">帮助</p>
+                <p class="" onclick="location='index.html'">分享</p>
+            </div>
+        </div>
+    </a>
+</header>
+<div class="aui-banner-content aui-fixed-top" data-aui-slider>
+    <div class="aui-banner-wrapper">
+        <!--轮播图图片-->
+        <div class="aui-banner-wrapper-item">
+            <a href="#">
+                <img src="__PUBLIC__/Upload/goods/{$goods[0]['pic']}">
+            </a>
+        </div>
+        <foreach name="images" item="i">
+            <div class="aui-banner-wrapper-item">
+                <a href="#">
+                    <img src="__PUBLIC__/Upload/goods/{$i.pics}">
+                </a>
+            </div>
+        </foreach>
+    </div>
+    <div class="aui-banner-pagination"></div>
+</div>
+<div class="aui-product-content">
+    <div class="aui-real-price clearfix">
+			<span>
+				<i>￥</i>{$tuan[0]['t_sale']}
+			</span>
+        <del><span class="aui-font-num">￥{$goods[0]['price']}</span></del>
+        <div class="aui-settle-choice">
+            <span>团购价</span>
+        </div>
+    </div>
+    <div class="aui-product-title">
+        <h2>
+            {$goods[0]['goodsname']}
+        </h2>
+        <p>
+            {$goods[0]['goodsinfo']}
+        </p>
+    </div>
+    <div class="aui-product-boutique clearfix">
+        <img src="__PUBLIC__/Home/img/icon/icon-usa.png" alt="">
+        <span class="aui-product-tag-text">美国品牌</span>
+        <img src="__PUBLIC__/Home/img/icon/icon-sj.png" alt="">
+        <span class="aui-product-tag-text">精选商家</span>
+    </div>
+    <div class="aui-product-strip">
+        <img src="__PUBLIC__/Home/img/bg/ssy.jpg" alt="">
+    </div>
+    <div class="aui-product-coupon">
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear" data-ydui-actionsheet="{target:'#actionSheet',closeElement:'#cancel'}">
+            <div class="aui-address-cell-bd">选择</div>
+            <div class="aui-address-cell-ft">颜色分类</div>
+        </a>
+        <div class="m-actionsheet" id="actionSheet">
+            <div style="position:relative">
+
+                <div style="height:400px;">
+                    <h3>
+                        内容填充
+                    </h3>
+                </div>
+                <a href="javascript:;" class="actionsheet-action" id="cancel">关闭</a>
+                <div class="aui-product-function">
+                    <a href="" class="yellow-color">单独购买</a>
+                    <a href="" class="red-color">一键开团</a>
+                </div>
+
+            </div>
+        </div>
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd">领券</div>
+            <div class="aui-address-cell-ft">
+                <span>满159减10券</span>
+                <span>满299减30券</span>
+            </div>
+        </a>
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd">配送</div>
+            <div class="aui-address-cell-ft">上海 至 北京海淀区</div>
+        </a>
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd">运费</div>
+            <div class="aui-address-cell-ft">免运费</div>
+        </a>
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd">说明</div>
+            <div class="aui-address-cell-ft">假一赔十 7天无忧退货</div>
+        </a>
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd"></div>
+            <div class="aui-address-cell-ft">限购一次，人数不足自动退款</div>
+        </a>
+    </div>
+
+<if condition="$tuan eq 1">
+    <div class="aui-dri"></div>
+    <div class="aui-product-evaluate">
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd">以下小伙伴已发起拼团，您可以直接参加</div>
+        </a>
+        <div class="aui-address-cell-bd">
+            <div style="height: 40px;width:95%;border: 1px red solid;border-radius:25px;margin:2px 15px 2px ">
+                <div style="float: left">
+                    <img src="__PUBLIC__/Home/img/user/user10.png" alt="" style="width:35px;height:35px;border-radius:50%;margin-left: 11px;float: left"/><span style="line-height: 38px">{$uname}</span>
+                </div>
+                <div class="aui-address-cell-ft" style="height:38px;border-radius:24px;background-color: red;width:75px;float: right;line-height: 38px">
+                    <a style="font-size: 13px;color: white;line-height: 20px" href="{:U('cantuan')}?flag={$flag}">立即参团</a>
+                </div>
+                <div style="float:right"><span style="font-size: 12px;color: #3B5995;line-height: 38px;margin-right:6px">还差{$num}人成团</span></div>
+            </div>
+        </div>
+    </div>
+</if>
+    <div class="aui-dri"></div>
+    <div class="aui-product-evaluate">
+        <a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
+            <div class="aui-address-cell-bd">
+                <div class="clearfix">
+                    <div class="aui-product-shop-img">
+                        <img src="__PUBLIC__/Home/img/user/user10.png" alt="">
+                    </div>
+                    <div class="aui-product-shop-text">
+                        <h3>Versace官方旗舰店</h3>
+                        <p>精选商家  服务保障</p>
+                        <p>在售商品2390件</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-address-cell-ft">
+                <span>进店看看</span>
+            </div>
+        </a>
+    </div>
+    <div class="aui-dri"></div>
+    <div class="aui-slide-box">
+
+
+    </div>
+    <div class="aui-dri"></div>
+    <div class="aui-product-pages">
+        <div class="aui-product-pages-title">
+            <h2>图文详情</h2>
+        </div>
+        <div class="aui-product-pages-img">
+            <foreach name="images" item="i">
+                <img src="__PUBLIC__/Upload/goods/{$i.pics}" alt="">
+            </foreach>
+        </div>
+    </div>
+    <div class="aui-recommend">
+        <img src="__PUBLIC__/Home/img/bg/icon-tj3.jpg" alt="">
+        <!--<h2>为你推荐</h2>-->
+    </div>
+
+
+</div>
+
+<footer class="aui-footer-product">
+    <div class="aui-footer-product-fixed">
+        <div class="aui-footer-product-concern-cart">
+            <a href="#">
+                <span class="aui-f-p-icon"><img src="__PUBLIC__/Home/img/icon/icon-kf.png" alt=""></span>
+                <span class="aui-f-p-focus-info">客服</span>
+            </a>
+            <a href="#">
+                <span class="aui-f-p-icon"><img src="__PUBLIC__/Home/img/icon/icon-sc.png" alt=""></span>
+                <span class="aui-f-p-focus-info">收藏</span>
+            </a>
+            <a href="#">
+                <span class="aui-f-p-icon"><img src="__PUBLIC__/Home/img/icon/icon-dp.png" alt=""></span>
+                <span class="aui-f-p-focus-info">店铺</span>
+            </a>
+        </div>
+        <div class="aui-footer-product-action-list">
+            <a href="{:U('Createorder/index')}?gid={$goods[0]['id']}&num=1" class="yellow-color">单独购买</a>
+            <a href="{:U('Tuangou/kaituan')}?tuan={$tuanid}" class="red-color">一键开团</a>
+        </div>
+    </div>
+</footer>
+
+<script src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script src="__PUBLIC__/Home/js/aui.js"></script>
+<script src="__PUBLIC__/Home/js/aui-down.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //绑定滚动条事件
+        //绑定滚动条事件
+        $(window).bind("scroll", function () {
+            var sTop = $(window).scrollTop();
+            var sTop = parseInt(sTop);
+            if (sTop >= 100) {
+                if (!$("#scrollSearchPro").is(":visible")) {
+                    try {
+                        $("#scrollSearchPro").slideDown();
+                    } catch (e) {
+                        $("#scrollSearchPro").show();
+                    }
+                }
+            }
+            else {
+                if ($("#scrollSearchPro").is(":visible")) {
+                    try {
+                        $("#scrollSearchPro").slideUp();
+                    } catch (e) {
+                        $("#scrollSearchPro").hide();
+                    }
+                }
+            }
+        });
+    })
+</script>
+
+<script>
+    /**
+     * Javascript API调用ActionSheet
+     */
+    !function ($) {
+        var $myAs = $('#J_ActionSheet');
+
+        $('#J_ShowActionSheet').on('click', function () {
+            $myAs.actionSheet('open');
+        });
+
+        $('#J_Cancel').on('click', function () {
+            $myAs.actionSheet('close');
+        });
+
+    }(jQuery);
+</script>
+
+
+</body>
+</html>

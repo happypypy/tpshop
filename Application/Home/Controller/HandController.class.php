@@ -10,7 +10,7 @@ use Think\Controller;
 class HandController extends Controller {
 
     public function index(){
-        $id=6;
+        $id=session('uid');
         $img=M('member')->where("uid=$id")->getfield('codepic');
         if($img){
             $this->assign('img',$img);
@@ -29,7 +29,7 @@ class HandController extends Controller {
      */
     public function code($id,$pic){
         Vendor('phpqrcode.phpqrcode');//这个很重要，没引用则不能使用
-        $value = "http://www.baibu.cn?id={$id}"; //二维码内容
+        $value = "http://www.tpshop.com/Home/Login/regist?id={$id}"; //二维码内容
         $errorCorrectionLevel = 'L';//容错级别
         $matrixPointSize = 6;//生成图片大小
         //生成二维码图片
