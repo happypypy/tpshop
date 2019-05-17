@@ -62,10 +62,6 @@ class IndexController extends Controller {
         $this->goodsaddd=M('tp_goodsad')
             ->where('id=4')
             ->select();
-
-
-
-
         $this->display();
     }
 
@@ -101,5 +97,28 @@ class IndexController extends Controller {
         $this->assign('goodimg',$goodimg);
         $this->display("index/ui-product");
 
+    }
+
+    public function cheap(){
+        $state=I('get.id');
+
+        $statee=I('get.idd');
+        $stateee=I('get.iddd');
+        //dump($statee);
+        $cheap=M('tp_cheap')
+            ->where("state=$state")
+            ->select();
+
+        $cheapp=M('tp_cheap')
+            ->where("state=$statee")
+            ->select();
+        $cheappp=M('tp_cheap')
+            ->where("state=$stateee")
+            ->select();
+
+        $this->assign("cheap",$cheap);
+        $this->assign("cheapp",$cheapp);
+        $this->assign("cheappp",$cheappp);
+        $this->display("index/cheap");
     }
 }
