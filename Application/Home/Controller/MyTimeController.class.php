@@ -26,7 +26,7 @@ class MyTimeController extends Controller {
     public function goodinfo(){
         $id=I("get.id");
         $this->goods=M('tpGoodsinfo')
-            ->field('goodsname,goodsinfo,price,buynum,buytime,buyprice,pic')
+            ->field('id,goodsname,goodsinfo,price,buynum,buytime,buyprice,pic')
             ->where("id=$id")
             ->select();
         $this->images=M("tpGoodsimages")
@@ -35,15 +35,37 @@ class MyTimeController extends Controller {
         $this->display();
     }
 
+    //抢购商品下单
+    public function qgorder(){
+        $id=I("get.id");
+        $this->setredis($id);
+        $this->goods=M('tpGoodsinfo')
+            ->field('id,goodsname,goodsinfo,price,buytime,buyprice,pic')
+            ->where("id=$id")
+            ->select();
+        $this->display();
+    }
+
+    //提交订单
+    public function submitOrder(){
+        $id=I("get.id");
+        $data['ordersn']=date('YmdHis').rand(100,999);
+        $data['gid']=$id;//商品ID
+        $data['price']=M('tpGoodsinfo')->where("id=$id")
+            ->getfield('buyprice');
+        $data['num']=1;
+        M('tpOrderconnect')->add($data);
+        $this->assign('data',$data);
+        $this->display();
+    }
+
     //redis中缓存商品的信息
-    public $gnum=1;
-    public function setredis(){
+    public function setredis($gid=10){
         $id=2;//用户ID
-        $gid=3;//商品ID
         $gnum=1;//商品数量
+        $num=M('tpGoodsinfo')->where("id=$gid")->getfield('buynum');//库存
         $redis = new \Redis();
         $redis->connect('127.0.0.1', 6379);
-        $num=10; //库存
         $len=$redis->llen('id'); //返回列表的长度
         $count = $num-$len; //实际库存-被抢购的库存 = 剩余可用库存
         //剩余可用库存大于0，可以将数据存入list中
@@ -51,17 +73,15 @@ class MyTimeController extends Controller {
             $redis->lpush('id',$id);//从列表头部插入用户ID
             $redis->lpush('gid',$gid);//从列表头部插入商品ID
             $redis->lpush('num',$gnum);//从列表头部插入商品数量
+            /* 下面处理抢购成功流程 */
+            M('tpGoodsinfo')->where("id=$gid")->setDec('buynum', 1);//减少num库存字段
         }
-        echo $len;
-        //echo $count;
         if(!$count) {
-            //echo '已经抢光了哦';
             return '已经抢光了哦';
         }
-        /* 下面处理抢购成功流程 */
-        //DB::table('goods')->decrement('num', 1);//减少num库存字段
     }
 
+    //获取购买用户的信息
     public function getredis(){
         $redis = new \Redis();
         $redis->connect('127.0.0.1', 6379);

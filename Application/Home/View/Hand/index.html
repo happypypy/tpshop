@@ -18,12 +18,11 @@
 </header>
 
 <section class="aui-myOrder-content">
-    <div>
-        <img src="__PUBLIC__/Home/img/bg/icon-jp.png" width="100%" alt="">
+    <div style="position:relative;margin-top:12px;">
+        <img src="__PUBLIC__/Home/img/bg/icon-jp.png" width="100%" alt="" style="position:absolute; z-index:1;">
+        <img src="__PUBLIC__/code/{$img}" alt=""  style="position:absolute; top:408px; left:124px; z-index:2">
     </div>
-
 </section>
-
 
 <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/aui.js"></script>
@@ -39,13 +38,6 @@
             panel: '.tab-panel-item',
             activeClass: 'tab-active'
         });
-
-        /*
-         $tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
-         console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
-         });
-         */
-
         $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
             console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
         });

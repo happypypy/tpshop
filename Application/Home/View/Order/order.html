@@ -1,4 +1,5 @@
 <include file="Common:header"/>
+<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
     <title>我的订单</title>
 </head>
 <body>
@@ -37,6 +38,7 @@
                         <div class="aui-list-title-info">
                             <a href="#" class="aui-well ">
                                 <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                              <!-- {$v.ordersn}-->
                                 <if condition="$v.state eq 2">
                                 <div class="aui-well-ft">已收货</div>
                                 <elseif condition="$v.state eq 1"/>
@@ -77,7 +79,7 @@
                         <if condition="$v.state eq 2">
                             <div class="aui-list-title-btn">
                                 <a href="#">查看订单</a>
-                                <a href="#" class="red-color">评价</a>
+                                <a href="{:U('Home/Order/comment')}?sn={$v.ordersn}" class="red-color">评价</a>
                             </div>
                             <div class="aui-dri"></div>
                             <elseif condition="$v.state eq 1"/>
@@ -88,13 +90,13 @@
                             <div class="aui-dri"></div>
                             <elseif condition="$v.state eq 3"/>
                             <div class="aui-list-title-btn">
-                                <a href="#">取消订单</a>
+                                <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">取消订单</a>
                                 <a href="#" class="red-color">催物流</a>
                             </div>
                             <div class="aui-dri"></div>
                             <elseif condition="$v.state eq 4"/>
                             <div class="aui-list-title-btn">
-                                <a href="#">删除订单</a>
+                                <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">删除订单</a>
                             </div>
                             <elseif condition="$v.state eq 5"/>
                             <div class="aui-list-title-btn">
@@ -115,6 +117,7 @@
                         <div class="aui-list-title-info">
                             <a href="#" class="aui-well ">
                                 <div class="aui-well-bd">{$v.created_at|date="Y-m-d",###}</div>
+                                <!--{$v.ordersn}-->
                                 <div class="aui-well-ft">待付款</div>
                             </a>
                             <foreach name="v['goods']" item="vv">
@@ -143,7 +146,7 @@
                             </foreach>
                         </div>
                         <div class="aui-list-title-btn">
-                            <a href="#">取消订单</a>
+                            <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">取消订单</a>
                             <a href="#" class="red-color">立即付款</a>
                         </div>
                         <div class="aui-dri"></div>
@@ -189,7 +192,7 @@
                             </foreach>
                         </div>
                         <div class="aui-list-title-btn">
-                            <a href="#">取消订单</a>
+                            <a href="javasctipt:;" class="del" ordersn="{$v.ordersn}">取消订单</a>
                             <a href="#" class="red-color">催物流</a>
                         </div>
                         <div class="aui-dri"></div>
@@ -282,7 +285,7 @@
                         </div>
                         <div class="aui-list-title-btn">
                             <a href="#">查看订单</a>
-                            <a href="#" class="red-color">评价</a>
+                            <a href="{:U('Home/Order/comment')}?sn={$v.ordersn}" class="red-color">评价</a>
                         </div>
                         <div class="aui-dri"></div>
                     </li>
@@ -315,7 +318,19 @@
             console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
         });
     }(jQuery);
-</script>
 
+//删除
+    $(".del").click(function() {
+        obj = $(this);
+        //发出ajax请求
+        ordersn = obj.attr("ordersn")
+        //console.log(ordersn)
+        $.get("{:U('Home/Order/delorder')}",{'ordersn': ordersn},function (res){
+            console.log(res);
+            obj.parent().parent().remove();
+        }, "text");
+    })
+
+</script>
 </body>
 </html>
