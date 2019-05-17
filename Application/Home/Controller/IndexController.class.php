@@ -78,9 +78,14 @@ class IndexController extends Controller {
             ->select();
            // dump($goodimg);
         $goods=M('tp_goodsinfo')
-            ->field('goodsname,price,sale')
+            ->field('goodsname,price,sale,id')
             ->where("id=$id")
             ->select();
+        $goodsid=$goods['0'];
+        $a=$goodsid['id'];
+
+
+
         $this->goodsyf=M('tp_goodsinfo')
             ->field('goodsname,price,pic,sale,id')
             ->limit(7)
@@ -90,7 +95,9 @@ class IndexController extends Controller {
             ->field('goodsname,price,pic,sale,id')
             ->limit(20)
             ->select();
+
         $this->assign('goods',$goods);
+        $this->assign('a',$a);
         $this->assign('goodimg',$goodimg);
         $this->display("index/ui-product");
 

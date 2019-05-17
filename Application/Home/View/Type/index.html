@@ -22,20 +22,45 @@
 		<div class="aui-scroll-box" data-ydui-scrolltab>
 			<!--左边导航栏-->
 			<div class="aui-scroll-nav">
+				<if condition="$typeid">
+					<a href="#" class="aui-scroll-item aui-crt">
+						<div class="aui-scroll-item-icon"></div>
+						<div class="aui-scroll-item-text">{$indextype}</div>
+					</a>
+				</if>
 				<a href="#" class="aui-scroll-item aui-crt">
 					<div class="aui-scroll-item-icon"></div>
 					<div class="aui-scroll-item-text">热门推荐</div>
 				</a>
 				<foreach name="type" item="v">
-				<a href="#" class="aui-scroll-item aui-crt">
-					<div class="aui-scroll-item-icon"></div>
-					<div class="aui-scroll-item-text">{$v.tname}</div>
-				</a>
+					<a href="#" class="aui-scroll-item aui-crt">
+						<div class="aui-scroll-item-icon"></div>
+						<div class="aui-scroll-item-text">{$v.tname}</div>
+					</a>
 				</foreach>
 			</div>
 			<!--左边导航栏-->
 			<!--右边导航栏-->
 			<div class="aui-scroll-content">
+				<if condition="$typeid">
+					<div class="aui-scroll-content-item">
+						<div class="aui-class-img">
+							<img src="__PUBLIC__/Home/img/pd/cf-8.jpg" alt="">
+						</div>
+						<h2 class="aui-scroll-content-title">{$indextype}</h2>
+						<section class="aui-grid-content">
+							<div class="aui-grid-row aui-grid-row-clear">
+								<!--商品数据-->
+								<foreach name="indexdata" item="d">
+										<a href="{:U('typegoods')}?id={$d.id}" class="aui-grid-row-item">
+											<i class="aui-icon-large aui-icon-sign"><img src="__PUBLIC__/Upload/type/{$d.pic}" alt=""></i>
+											<p class="aui-grid-row-label">{$d.tname}</p>
+										</a>
+								</foreach>
+							</div>
+						</section>
+					</div>
+				</if>
 				<div class="aui-scroll-content-item">
 					<div class="aui-class-img">
 						<img src="__PUBLIC__/Home/img/pd/cf-4.jpg" alt="">
