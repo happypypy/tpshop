@@ -23,8 +23,8 @@ class TuangouController extends Controller {
             ->select();
         $this->tuan=M('tp_tuan')->where("gid=$id")->select();
         //查询出没有完成拼团的,没有就不assign
-
-        $res=M()->table('tp_tuanuser as u')->join('tp_tuanstate as s on u.flag=s.id')->where("state=0")->where("u.tid=$this->tuanid")->select();
+        $res=M()->table('tp_tuanuser as u')->join('tp_tuanstate as s on u.flag=s.id')->where("s.state=0")->where("u.tid=$this->tuanid and s.state=0")->select();
+        //dump($res);
        // $res=M('tp_tuanuser')->where("tid=$this->tuanid")->select();
         //dump($res);
         //开团人信息
@@ -37,6 +37,7 @@ class TuangouController extends Controller {
             $size=M("tp_tuan")->where("id=$this->tuanid")->getField("size");
             $this->num=$size-$num;
             if($res){
+
                 $this->tuan=1;//表示有拼团任务，在页面上显示出来
                 $this->flag=$res[0]['flag'];
 
@@ -63,7 +64,7 @@ class TuangouController extends Controller {
     //添加数据库
     public function addtuan($flag){
         $tuan=I("get.tuan");
-        $uid=333;
+        $uid=111;
         //查询此人是否已经参加过拼团
         $bool=M("tp_tuanuser")->where("tid=$tuan and uid=$uid")->find();
         //如果没有参加过，就允许参加
@@ -83,7 +84,9 @@ class TuangouController extends Controller {
                 die();
             }
         }else{
-            echo "您已参加过此次活动，将关注其他活动";
+           //已参加过此活动
+            $this->redirect('Tuangou/failll');
+           // echo "您已参加过此次活动，将关注其他活动";
             die();
         }
     }
@@ -136,5 +139,10 @@ class TuangouController extends Controller {
         $this->redirect('Createorder/index',array("gid"=>$gid,"num"=>1,"sale"=>$sale,'tuan'=>$tuanid,'flag'=>$flag));
 
     }
+     function failll(){
+       $this->display();
+
+     }
+
 
 }
