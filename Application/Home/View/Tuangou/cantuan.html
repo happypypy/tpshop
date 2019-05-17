@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <title>拼团</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/core.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/icon.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/home.css">
+    <link rel="icon" type="image/x-icon" href="__PUBLIC__/Home/favicon.ico">
+    <link href="__PUBLIC__/Home/iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" href="__PUBLIC__/tuan/index.css" tppabs="http://www.17sucai.com/preview/177065/2016-07-03/shuiguo/css/index.css"/>
+</head>
+<body>
+<header class="aui-header-default aui-header-fixed aui-header-bg">
+    <a href="javascript:history.back(-1)" class="aui-header-item">
+        <i class="aui-icon aui-icon-back-white"></i>
+    </a>
+    <div class="aui-header-center aui-header-center-clear">
+        <div class="aui-header-center-logo">
+            <div class="aui-car-white-Typeface">参团</div>
+        </div>
+    </div>
+    <a href="#" class="aui-header-item-icon"   style="min-width:0">
+        <i class="aui-icon aui-icon-member"></i>
+    </a>
+</header>
+<div id="user-b" style="margin-top: 40px">
+    <div class="groupsdetails-box">
+        <div class="groups-m">
+            <!-- 商品详情 -->
+            <div class="mc-sum-box">
+                <div class="myorder-sum fl">
+                    <img src="__PUBLIC__/Upload/goods/{$goodsinfo.pic}" tppabs="http://www.17sucai.com/preview/177065/2016-07-03/shuiguo/images/pay1.jpg"></div>
+                <div class="myorder-text">
+                    <h1>{$goodsinfo.goodsname}&nbsp;&nbsp;&nbsp;{$goodsinfo.goodsinfo} </h1>
+                    <h2>{$tuan.size}人团：<span class="mc-t">￥<b>{$tuan.t_sale}</b>/件</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="groups-avata">
+
+            <p class="man-number">还差<span>{$num}</span>人才能享受拼团优惠呦~</p>
+            <div class="count_down2">
+                剩余<span>23</span>:<span>59</span>:<span>59</span>结束
+            </div>
+
+        </div>
+        <div class="groups-m groups-m-s">
+            <!--拼团玩法-->
+            <div class="step">
+                <div class="step_hd">
+                    拼团玩法<a class="step_more" href="javascript:if(confirm(%27http://www.17sucai.com/preview/177065/2016-07-03/shuiguo/tuan_rule.html  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.17sucai.com/preview/177065/2016-07-03/shuiguo/tuan_rule.html%27" tppabs="http://www.17sucai.com/preview/177065/2016-07-03/shuiguo/tuan_rule.html">查看详情</a>
+                </div>
+                <div id="footItem" class="step_list">
+                    <div class="step_item">
+                        <div class="step_num">1</div>
+                        <div class="step_detail">
+                            <p class="step_tit">选择
+                                <br>心仪商品</p>
+                        </div>
+                    </div>
+                    <div class="step_item">
+                        <div class="step_num">2</div>
+                        <div class="step_detail">
+                            <p class="step_tit">支付开团
+                                <br>或参团</p>
+                        </div>
+                    </div>
+                    <div class="step_item step_item_on">
+                        <div class="step_num">3</div>
+                        <div class="step_detail">
+                            <p class="step_tit">等待好友
+                                <br>参团支付</p>
+                        </div>
+                    </div>
+                    <div class="step_item">
+                        <div class="step_num">4</div>
+                        <div class="step_detail">
+                            <p class="step_tit">达到人数
+                                <br>团购成功</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="invite-btn"><a href="{:U('cantuanorder')}?flag={$tuan.flag}" style="color: white">还差{$num}人组团成功</a></div>
+    </div>
+</div>
+</body>
+</html>
