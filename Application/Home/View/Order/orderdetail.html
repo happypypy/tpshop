@@ -10,58 +10,70 @@
 </head>
 <body>
 <div class="near-box">
-    <a href="./my-indent-dfh.html" class="jd-qrdd-topbox">订单详情</a>
+    <a href="#" class="jd-qrdd-topbox">订单详情</a>
     <div class="jd-qrdd-bigbox">
         <!--商品地址管理部分-->
-        <div class="indent-details-box">
+        <div class="indent-details-box" style="margin-top: 5px">
             <span class="indent-details-img1"></span>
-            <span class="indent-details-text1">已发货</span>
-            <span class="indent-details-text2">包裹已发送，感谢使用圆通快递，期待再次为您服务！</span>
-            <span class="indent-details-text3">2017-10-23 12:25:12</span>
+            <if condition="$_GET['state'] eq 2">
+            <span class="indent-details-text1">已收货</span>
+            <span class="indent-details-text2">交易成功，您的包裹已签收，期待下次为您服务！</span>
+            <elseif condition="$_GET['state'] eq 1"/>
+            <span class="indent-details-text1">待收货</span>
+            <span class="indent-details-text2">包裹已发出，感谢使用{$eid}，期待再次为您服务！</span>
+            <elseif condition="$_GET['state'] eq 3"/>
+            <span class="indent-details-text1">待发货</span>
+            <span class="indent-details-text2">买家已付款</span>
+            <elseif condition="$_GET['state'] eq 4"/>
+            <span class="indent-details-text1">交易失败</span>
+            <span class="indent-details-text2">交易关闭</span>
+            <elseif condition="$_GET['state'] eq 5"/>
+            <span class="indent-details-text1">待付款</span>
+            <span class="indent-details-text2">等待买家付款</span>
+            </if>
         </div>
         <!--地址部分-->
         <div class="jd-qrdd-a1">
-            <span class="qrdd-a1-t1">董辉</span>
-            <span class="qrdd-a1-t1">185****5453</span>
+            <foreach name="addressinfo" item="v">
+            <span class="qrdd-a1-t1">{$v.name}</span>
+            <span class="qrdd-a1-t1">{$v.phone}</span>
             <div class="qrdd-a1-b1">
                 <span class="qrdd-a1-img1"></span>
-                <span class="qrdd-a1-t3">北京市 海淀区 四环到五环之间 四季青杏石口路5号益园文化创业基地c3区4层</span>
+                <span class="qrdd-a1-t3">{$v.address}</span>
             </div>
+            </foreach>
         </div>
         <!--商品部分-->
         <div class="zjzz-buylist-goods1">
+            <foreach name="order" item="v">
+            <a href="{:U('Home/Index/ui-product')}?gid={$v.gid}">
             <div class="zjzz-buylist-det">
-                <img src="__PUBLIC__/Home/img/images/fruits-img4.png"/>
+                <img src="__PUBLIC__/Upload/goods/{$v.pic}"/>
                 <div class="zjzz-buylist-gdetail">
-                    <span class="zjzz-buylist-gtit1">新鲜南方脐橙1000g/盒，大个保证新鲜！包赔！</span>
+                    <span class="zjzz-buylist-gtit1">{$v.goodsname}</span>
                     <span class="zjzz-buylist-gmoney">
-                        <i class="zjzz-buylist-gm1">￥30.00</i>
-                        <i class="zjzz-buylist-gm2">x1</i>
+                        <i class="zjzz-buylist-gm1">￥{$v.price}</i>
+                        <i class="zjzz-buylist-gm2">x{$v.num}</i>
                     </span>
                 </div>
             </div>
-            <div class="zjzz-buylist-btn">
-                <a class="zjzz-buylist-btn3">确认收货</a>
-            </div>
+            </a>
+            </foreach>
         </div>
         <!--商品金额部分-->
         <div class="indent-details-box2">
             <span class="indent-details-text4">应付总额</span>
-            <span class="indent-details-text5">￥30.00</span>
+            <span class="indent-details-text5">￥{$total}.00</span>
         </div>
         <div class="indent-details-box2">
             <span class="indent-details-text4 tcolor-grey">商品总价</span>
-            <span class="indent-details-text5 tcolor-black">￥0.00</span>
-        </div>
-        <div class="indent-details-box2">
-            <span class="indent-details-text4 tcolor-grey">运费</span>
-            <span class="indent-details-text5 tcolor-black">￥0.00</span>
+            <span class="indent-details-text5 tcolor-black">￥{$total}.00</span>
         </div>
         <!--订单编号部分-->
         <div class="indent-details-box3">
-            <p>订单编号:201711024866544846</p>
+            <p>订单编号:{$_GET['sn']}</p>
             <p>支付方式:支付宝</p>
-            <p>下单时间:2017-11-01 21:15:23</p>
+            <p>下单时间:{$createdtime|date="Y-m-d H:i:s",###}</p>
         </div>
     </div>
 </div>
