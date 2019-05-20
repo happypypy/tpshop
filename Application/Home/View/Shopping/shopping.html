@@ -46,7 +46,7 @@
 				<ul>
 					<li>
 						<div class="aui-car-box-list-item">
-							<input type="checkbox" class="check check{$v.gid} goods-check goodsCheck">
+							<input type="checkbox" class="check  goods-check goodsCheck" id="check{$v.gid}" >
 							<div class="aui-car-box-list-img">
 								<a href="{:U('Index/goodsdata')}?id={$v.id}">
 									<img src="__PUBLIC__/Upload/goods/{$v.pic}" alt="">
@@ -64,11 +64,11 @@
 								<!--</div>-->
 								<div class="aui-car-box-list-text-price">
 									<div class="aui-car-box-list-text-pri">
-										￥<b class="sale" id="sale">{$v['sale']}</b>
+										￥<b class="sale" id="sale{$v.gid}">{$v[sale]*$v[num]}</b>
 									</div>
 									<div class="aui-car-box-list-text-arithmetic">
-										<a href="javascript:;" class="minus" onclick="minus({$v.gid},{$v.sale})" >-</a>
-										<span class="num" name="num" id="num{$v.gid}">{$v['num']}</span>
+										<a href="javascript:;" class="minus"  onclick="minus({$v.gid},{$v.sale})" >-</a>
+										<span class="num" id="num{$v.gid}" >{$v['num']}</span>
 										<a href="javascript:;" class="plus" onclick="plus({$v.gid},{$v.sale})" >+</a>
                                         <div><br/>
                                         <div><a href="javascript:;" class="del" gid="{$v.gid}" style="color:red">删除</a>
@@ -89,9 +89,10 @@
 		</div>
 	</section>
 	<div class="aui-payment-bar">
-		<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
+		<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck" >全选</div>
 		<div class="shop-total">
-			<strong>合计：<i class="total" id="total">0</i></strong>
+            <strong class="cart_price">合计<b>￥<span id="total" gid="{$v.gid}">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></strong>
+			<!--<strong>合计：<i class="total" id="total">0</i></strong>-->
 		</div>
 		<a href="order.html" class="settlement">结算</a>
 	</div>
@@ -101,7 +102,7 @@
 </body>
 </html>
 
-<script>
+<script type="text/javascript">
     //商品删除
 $(".del").click(function(){
     obj=$(this);
@@ -122,49 +123,66 @@ $(".del").click(function(){
    // 减少商品
     function minus(gid,sale){
        obj=$(this);
+   //获取id=num的值转换为数字
+        num=parseInt($("#num"+gid).text());
+        //声明一个地址变量
        url="{:U('Shopping/minus')}";
+        //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
-                if($(".check"+gid).attr('checked')=='checked'){
-                    total=total-sale;
-                    $("#total").text(total)
-                }
-                num=$("#num"+gid).val();
+                //每点击执行一次该数值--
                 num--;
-                if(num<1){
-                    if($(".check"+gid).attr('checked')=='checked'){
-                        $("#total").text(total)
-                    }
-                    num=1;
-                }
-                $("#num"+gid).val(num);
-                $("#sale"+gid).text(num*sale);
+                //小计
+                $('#sale'+gid).text(num*sale);
+
             }
-        },'text');
+        },"text");
     }
+
+
+
+
+
+
 
     //增加
     function plus(gid,sale){
         obj=$(this);
+        //获取id=num的值转换为数字
+        num=parseInt($("#num"+gid).text());
         url="{:U('Shopping/plus')}";
+        //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
-                if($(".check"+gid).attr('checked')=='checked'){
-                    total=total-sale;
-                    $("#total").text(total)
-                }
-                num=$("#num"+gid).val();
+               //每点击执行一次该数值++
                 num++;
-                if(num<1){
-                    if($(".check"+gid).attr('checked')=='checked'){
-                        $("#total").text(total)
-                    }
-                    num=1;
-                }
-                $("#num"+gid).val(num);
-                $("#sale"+gid).text(num*sale);
+               //小计
+                $('#sale'+gid).text(num*sale);
+
             }
         },'text');
     }
+
+
+
+   //商品总价
+    $('.check').change(function(){
+        obj=$(this);
+        if(obj.attr('checked')=='checked'){
+            gid=obj.val();
+            money=$("#sale"+gid).text();
+            total=parseInt(total)+parseInt(money);
+            //console.log(total)
+            console.log(1111);
+        }
+        if(obj.attr('checked')==undefined){
+            gid=obj.val();
+            money=$("#sale"+gid).text();
+            total=parseInt(total)-parseInt(money);
+            console.log(2222222);
+            //console.log(total)
+        }
+        $("#total").html(total)
+    })
 
 </script>
