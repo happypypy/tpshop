@@ -32,7 +32,7 @@
 	<section class="aui-car-content">
 		<div class="aui-car-box">
 			<div class="aui-car-box-name">
-				<input type="checkbox" class="check goods-check shopCheck">
+
 				<h3>
 					<a href="#">优购优品网</a>
 				</h3>
@@ -46,7 +46,7 @@
 				<ul>
 					<li>
 						<div class="aui-car-box-list-item">
-							<input type="checkbox" class="check  goods-check goodsCheck" id="check{$v.gid}" >
+							<input type="checkbox" class="check  goods-check goodsCheck" id="check{$v.gid}" gid="{$v.gid}">
 							<div class="aui-car-box-list-img">
 								<a href="{:U('Index/goodsdata')}?id={$v.id}">
 									<img src="__PUBLIC__/Upload/goods/{$v.pic}" alt="">
@@ -88,21 +88,23 @@
 
 		</div>
 	</section>
+
 	<div class="aui-payment-bar">
-		<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck" >全选</div>
+		<div class="all-checkbox"><input type="checkbox"  class="check checkall"  onclick="fun()" gid="{$v.gid}" >全选</div>
 		<div class="shop-total">
-            <strong class="cart_price">合计<b>￥<span id="total" gid="{$v.gid}">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></strong>
-			<!--<strong>合计：<i class="total" id="total">0</i></strong>-->
+            <div class="cart_price">商品总价：￥<b id="total">0</b></div>
 		</div>
 		<a href="order.html" class="settlement">结算</a>
 	</div>
-	<script src="__PUBLIC__/Home/js/jquery.min.js"></script>
 	<script src="__PUBLIC__/Home/js/aui-car.js"></script>
 
 </body>
 </html>
 
 <script type="text/javascript">
+    total=0;
+
+
     //商品删除
 $(".del").click(function(){
     obj=$(this);
@@ -165,24 +167,37 @@ $(".del").click(function(){
 
 
 
-   //商品总价
-    $('.check').change(function(){
-        obj=$(this);
-        if(obj.attr('checked')=='checked'){
-            gid=obj.val();
-            money=$("#sale"+gid).text();
-            total=parseInt(total)+parseInt(money);
-            //console.log(total)
-            console.log(1111);
+    //全选全不选
+    function fun(){
+        if($('.checkall').prop('checked')){
+            $('.check').prop('checked',true);
+        }else{
+            $('.check').prop('checked',false);
         }
-        if(obj.attr('checked')==undefined){
-            gid=obj.val();
+    }
+
+   //商品总价
+
+  $('.check').change(function(){
+        obj=$(this);
+//        console.log(obj);
+        if(obj.prop('checked')){
+            gid=obj.attr('gid');
+            console.log(gid);
+            money=$("#sale"+gid).text();
+            console.log(money);
+            total=parseInt(total)+parseInt(money);
+            console.log(total);
+        }else{
+            gid=obj.attr('gid');
             money=$("#sale"+gid).text();
             total=parseInt(total)-parseInt(money);
-            console.log(2222222);
-            //console.log(total)
         }
         $("#total").html(total)
-    })
+    });
+
+
+
+
 
 </script>
