@@ -6,57 +6,62 @@ class CreateorderController extends Controller
     //携带商品信息显示提交订单页面
     function index(){
         //1.购物车传来的商品
-        $cart_id="111,112,113";
-        $where['id']=array('in',$cart_id);
-        $where['uid']=111;
-        $car_list=M("cart_list")->where($where)->select();
-     //dump($car_list);
-        //从购物车里查询商品信息
-        $totall=0;
-        foreach ($car_list as $v){
-          $gid=$v['goodsid'];
-            $ress=M("tp_goodsinfo")->where("id=$gid")->find();
-            $ress["car_num"]=$v['num'];
-           // dump($ress);
-          $goodsinfo[]=$ress;
+        if(I("get.cart_id")){
+            $cart_id=I("get.cart_id");
+            $where['id']=array('in',$cart_id);
+            $where['uid']=session("uid");
+            $car_list=M("cart_list")->where($where)->select();
+            //dump($car_list);
+            //从购物车里查询商品信息
+            $totall=0;
+            foreach ($car_list as $v){
+                $gid=$v['goodsid'];
+                $ress=M("tp_goodsinfo")->where("id=$gid")->find();
+                $ress["car_num"]=$v['num'];
+                // dump($ress);
+                $goodsinfo[]=$ress;
+            }
+            // dump($goodsinfo);
+            //计算总价
+            foreach ($goodsinfo as $v){
+                //dump($v['sale']);
+                $totall+=$v['sale']*$v['car_num'];
+            }
+            //dump($totall);
+            session('total',$totall);
+            $totall=number_format($totall, 2);
+            //dump($totall);
+            //将商品信息放入session
+            session('goodsinfo',$goodsinfo);
+            $this->assign([ 'goodsinfo'=>$goodsinfo,'total'=>$totall]);
         }
-       // dump($goodsinfo);
-        //计算总价
-        foreach ($goodsinfo as $v){
-            //dump($v['sale']);
-            $totall+=$v['sale']*$v['car_num'];
-        }
-        //dump($totall);
-        session('total',$totall);
-        $totall=number_format($totall, 2);
-        //dump($totall);
-        //将商品信息放入session
-        session('goodsinfo',$goodsinfo);
-        $this->assign([ 'goodsinfo'=>$goodsinfo,'total'=>$totall]);
+
 
         //2.立即付款
+        if(I("get.gid")){
+            $gid=I("get.gid");
+            $num=I("get.num");
 
-//        $gid=I("get.gid");
-//        $num=I("get.num");
-//
-//       $res[0]= M("tp_goodsinfo")->where("id=$gid")->find();
-//        //dump($res);
-//        //接受团购id，开团
-//        if(I("get.tuan")){
-//            $tuan=I("get.tuan");
-//            $res[0]['sale']=I("get.sale");
-//        }
-//        //接受参团flag
-//        if(I("get.flag")){
-//            $flag=I("get.flag");
-//        }
-//        $total=number_format($res[0]['sale']*$num,2);
-//        $res[0]['car_num']=$num;
-//        //将商品信息放入session
-//        session('goodsinfo',$res);
-//        session('total',$total);
-//       // dump($res);
-//      $this->assign([ 'goodsinfo'=>$res,'total'=>$total,'tuan'=>$tuan,'flag'=>$flag]);
+            $res[0]= M("tp_goodsinfo")->where("id=$gid")->find();
+            //dump($res);
+            //接受团购id，开团
+            if(I("get.tuan")){
+                $tuan=I("get.tuan");
+                $res[0]['sale']=I("get.sale");
+            }
+            //接受参团flag
+            if(I("get.flag")){
+                $flag=I("get.flag");
+            }
+            $total=number_format($res[0]['sale']*$num,2);
+            $res[0]['car_num']=$num;
+            //将商品信息放入session
+            session('goodsinfo',$res);
+            session('total',$total);
+            // dump($res);
+            $this->assign([ 'goodsinfo'=>$res,'total'=>$total,'tuan'=>$tuan,'flag'=>$flag]);
+        }
+
         $this->display();
 
     }
@@ -64,23 +69,7 @@ class CreateorderController extends Controller
     function createorder(){
         //向order_connect插入数据库
         //dump(session('goodsinfo'));
-        //如果是团购
-            //dump(I("get.flag"));//string(0)''
-            //die;
-        if(I("get.tuan")!=""){
-            if(I("get.flag")!=""){
-                //cantuan
-                $flag=I("get.flag");
-            }else{
-                //kaituan
-                $flag=0;
-            }
 
-            $tuan=A("Tuangou");
-            //dump($flag);
-            //die;
-            $tuan->addtuan($flag);
-        }
         $goodsinfo=session('goodsinfo');
         $ordersn= date('YmdHis').rand(0,9999);
         session('ordersn',$ordersn);
@@ -97,7 +86,7 @@ class CreateorderController extends Controller
         }
         //向订单表里插入数据
         $data["ordersn"]=$ordersn;
-        $data["userid"]=111;
+        $data["userid"]=session('uid');
         $data["state"]=5;
         $data["created_at"]=time();
         $data["total"]=session('total');
@@ -107,6 +96,24 @@ class CreateorderController extends Controller
         $data["eid"]="圆通快递";
         $data['score']=$totalscore;
         $res=M('tp_orders')->add($data);
+
+        //如果是团购
+        //dump(I("get.flag"));//string(0)''
+        //die;
+        if(I("get.tuan")!=""){
+            if(I("get.flag")!=""){
+                //cantuan
+                $flag=I("get.flag");
+            }else{
+                //kaituan
+                $flag=0;
+            }
+
+            $tuan=A("Tuangou");
+            //dump($flag);
+            //die;
+            $tuan->addtuan($flag,$ordersn);
+        }
         if($res and $ress){
             $this->redirect('Createorder/payorder');
         }

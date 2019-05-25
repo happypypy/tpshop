@@ -62,9 +62,9 @@ class TuangouController extends Controller {
     }
 
     //添加数据库
-    public function addtuan($flag){
+    public function addtuan($flag,$ordersn){
         $tuan=I("get.tuan");
-        $uid=111;
+        $uid=session('uid');
         //查询此人是否已经参加过拼团
         $bool=M("tp_tuanuser")->where("tid=$tuan and uid=$uid")->find();
         //如果没有参加过，就允许参加
@@ -76,7 +76,7 @@ class TuangouController extends Controller {
                 M("tp_tuanstate")->add(['id'=>$flag,'state'=>0]);
             }
             //echo $flag;
-            $res=M("tp_tuanuser")->add(['tid'=>$tuan,'uid'=>$uid,'flag'=>$flag]);
+            $res=M("tp_tuanuser")->add(['tid'=>$tuan,'uid'=>$uid,'flag'=>$flag,'ordersn'=>$ordersn]);
             if($res){
                 $this->tuanstate($flag,$tuan);
             }else{
