@@ -90,6 +90,13 @@ class ShoppingController extends Controller{
         }
     }
 
+    //下单
+    function goodsid(){
+       $gid=I('get.gid');
+        dump($gid);
+
+    }
+
 
 
 }

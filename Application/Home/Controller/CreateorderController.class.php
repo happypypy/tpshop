@@ -8,7 +8,7 @@ class CreateorderController extends Controller
         //1.购物车传来的商品
         if(I("get.cart_id")){
             $cart_id=I("get.cart_id");
-            $where['id']=array('in',$cart_id);
+            $where['gid']=array('in',$cart_id);
             $where['uid']=session("uid");
             $car_list=M("cart_list")->where($where)->select();
             //dump($car_list);

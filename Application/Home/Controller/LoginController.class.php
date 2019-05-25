@@ -57,4 +57,24 @@ class LoginController extends Controller {
           $this->display();
         }
     }
+
+
+
+
+    //设置页面
+    function res(){
+
+
+        $this->display();
+}
+
+  //退出
+    function sets(){
+         //获取session
+        $uid=session('uid');
+        //清空session
+        session('uid',null);
+        $this->redirect("Login/login");
+
+    }
 }

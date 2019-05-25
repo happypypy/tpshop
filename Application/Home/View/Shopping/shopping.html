@@ -38,7 +38,7 @@
 				</h3>
 				<div class="aui-car-coupons">
 					<a href="#">领券</a>
-					<!--<a href="#">编辑</a>-->
+
 				</div>
 			</div>
 			<div class="aui-car-box-list">
@@ -46,7 +46,7 @@
 				<ul>
 					<li>
 						<div class="aui-car-box-list-item">
-							<input type="checkbox" class="check  goods-check goodsCheck" id="check{$v.gid}" gid="{$v.gid}">
+							<input type="checkbox" class="check  goods-check goodsCheck"  value="{$v.gid}" id="check{$v.gid}" gid="{$v.gid}" onclick="OK()">
 							<div class="aui-car-box-list-img">
 								<a href="{:U('Index/goodsdata')}?id={$v.id}">
 									<img src="__PUBLIC__/Upload/goods/{$v.pic}" alt="">
@@ -57,11 +57,7 @@
 								<h4>
 									<a href="ui-product.html">{$v.goodsname}</a>
 								</h4>
-								<!--<div class="aui-car-box-list-text-brief">-->
-									<!--&lt;!&ndash;<span>重量:3.3kg</span>&ndash;&gt;-->
-									<!--&lt;!&ndash;<span>颜色:标配版</span>&ndash;&gt;-->
-									<!--&lt;!&ndash;<span>版本:5.7英寸</span>&ndash;&gt;-->
-								<!--</div>-->
+
 								<div class="aui-car-box-list-text-price">
 									<div class="aui-car-box-list-text-pri">
 										￥<b class="sale" id="sale{$v.gid}">{$v[sale]*$v[num]}</b>
@@ -85,16 +81,19 @@
 				</ul>
                 </foreach>
 			</div>
-
+            <div class="cart_price">商品总价：￥<b class="total">0</b></div>
 		</div>
 	</section>
 
 	<div class="aui-payment-bar">
-		<div class="all-checkbox"><input type="checkbox"  class="check checkall"  onclick="fun()" gid="{$v.gid}" >全选</div>
+		<div class="all-checkbox"><input type="checkbox"  class="check checkall"  onclick="fun()" gid="0" >全选</div>
+<!--
+        <div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
+-->
 		<div class="shop-total">
-            <div class="cart_price">商品总价：￥<b id="total">0</b></div>
+            <div class="newtotal">商品总价：￥<b id="total" class="total">0</b></div>
 		</div>
-		<a href="order.html" class="settlement">结算</a>
+		<a href="" class="settlement">结算</a>
 	</div>
 	<script src="__PUBLIC__/Home/js/aui-car.js"></script>
 
@@ -163,6 +162,7 @@ $(".del").click(function(){
 
             }
         },'text');
+
     }
 
 
@@ -171,8 +171,21 @@ $(".del").click(function(){
     function fun(){
         if($('.checkall').prop('checked')){
             $('.check').prop('checked',true);
+            var checkBoxArr = [];
+            $('.check:checked').each(function() {
+                checkBoxArr.push($(this).attr('gid'));
+            });
+            console.log(checkBoxArr);
+            for(j = 0,len=checkBoxArr.length; j < len-1; j++) {
+                gid=checkBoxArr[j];
+                money=$("#sale"+gid).text();
+                total=parseInt(total)+parseInt(money);
+            }
+            $(".total").html(total);
+            console.log(total);
         }else{
             $('.check').prop('checked',false);
+            $("#total").html(0);
         }
     }
 
@@ -183,20 +196,39 @@ $(".del").click(function(){
 //        console.log(obj);
         if(obj.prop('checked')){
             gid=obj.attr('gid');
-            console.log(gid);
             money=$("#sale"+gid).text();
-            console.log(money);
             total=parseInt(total)+parseInt(money);
-            console.log(total);
+
         }else{
             gid=obj.attr('gid');
             money=$("#sale"+gid).text();
             total=parseInt(total)-parseInt(money);
         }
-        $("#total").html(total)
+        $("#total").html(total);
     });
 
 
+
+
+
+
+
+    //下单准备
+    function OK() {
+        if ($('.check').prop('checked')) {
+            var checkBoxArr = [];
+            $('.check:checked').each(function () {
+                checkBoxArr.push($(this).attr('gid'));
+            });
+            a=checkBoxArr;
+            cart_id= a.join(",");
+            console.log(cart_id);
+
+//
+            $(".settlement").attr('href',"{:U('Createorder/index')}?cart_id="+cart_id)
+    }
+
+    }
 
 
 
