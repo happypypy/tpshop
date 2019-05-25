@@ -62,7 +62,6 @@ class ShoppingController extends Controller{
          $num=$num['0']['num'];
         if($num>1){
 
-
         $res=$cart->where("gid=$gid")->setDec("num",1);
         //返回值
          if($res){

@@ -12,6 +12,7 @@ class OrderController extends Controller{
            ->where('o.userid=2')
            ->join("left join goods_info as g on g.id=c.gid")
            ->field("o.ordersn,state,created_at,total,c.num,gid,g.price,sale,pic,goodsname")
+            ->order("created_at desc")
            ->select();
         $data=[];
         foreach($order as &$v){
@@ -53,7 +54,6 @@ class OrderController extends Controller{
             'ordersn'=>$ordersn,
             'goodsinfo'=>$goodsinfo
         ]);
-        //die;
         $this->display("comment");
     }
 //评价成功页面，添加评论
@@ -64,14 +64,19 @@ class OrderController extends Controller{
         $res['goods_id']=I("post.goods_id");
         $res['user_id'] = 2;
         $res['comment'] = I('post.comtext');
-        //dump($_POST["pic"]);
+        dump($res);
         $res['score'] = I('post.score');
-        $row=M("tp_usercomment")->add($res);
+        //$row=M("tp_usercomment")->add($res);
         //dump($res);
-        $this->assign([
+        /*$this->assign([
             'row'=>$row
-        ]);
+        ]);*/
         $this->display("comment-ok");
+    }
+//我的评价
+    public function mycomment(){
+
+         $this->display("mycomment");
     }
 //取消订单
     public function delorder(){
@@ -79,5 +84,49 @@ class OrderController extends Controller{
         dump($ordersn);
         $res=M("orders")->where("ordersn='$ordersn'")->delete();//返回的是受影响行数,错误返回false
         //dump($res);
+    }
+//订单详情
+    public function orderdetail(){
+        //下单地址信息
+        //$uid=session('id');//获取会员id
+        $ordersn=$_GET['sn'];
+        $addressinfo=M('orders')
+            ->alias('o')
+            ->join("left join order_address as a on a.uid=o.userid and a.id=o.aid")
+            ->where("o.userid=2 and o.ordersn={$ordersn}")
+            ->field("o.address,a.name,phone")
+            ->select();
+        //dump($addressinfo);
+        //查询订单的详细信息
+        $order=M('order_connect')
+            ->alias('c')
+            ->join("left join orders as o on o.ordersn=c.ordersn")
+            ->where("o.userid=2 and o.ordersn={$ordersn}")
+            ->join("left join goods_info as g on g.id=c.gid")
+            ->field("o.created_at,total,c.num,gid,g.price,pic,goodsname")
+            ->select();
+        //dump($order);
+        //读取字段值其实就是获取数据表中的某个列的多个或者单个数据，最常用的方法是 getField方法
+        $eid=M('orders')->where("userid=2 and ordersn={$ordersn}")->getField('eid');
+        $total=M('orders')->where("userid=2 and ordersn={$ordersn}")->getField('total');
+        $createdtime=M('orders')->where("userid=2 and ordersn={$ordersn}")->getField('created_at');
+        $this->assign([
+            'addressinfo'=>$addressinfo,
+            'order'=>$order,
+            'eid'=>$eid,
+            'total'=>$total,
+            'createdtime'=>$createdtime
+        ]);
+        $this->display();
+    }
+//确认收货
+    public function confirm(){
+        $ordersn=$_GET['sn'];
+        //dump($ordersn);
+        $data['state']="2";
+        $res=M('orders')->where("ordersn='$ordersn'")->save($data);//根据条件更新记录
+        //dump($res);
+
+        $this->display();
     }
 }
