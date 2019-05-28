@@ -1,0 +1,275 @@
+[ 2019-05-09T08:54:09+08:00 ] 127.0.0.1 /Home/ui-me.html
+ERR: Êó†Ê≥ïÂä†ËΩΩÊéßÂà∂Âô®:Ui-me
+
+[ 2019-05-09T09:03:38+08:00 ] 127.0.0.1 /Home/find.html
+ERR: Êó†Ê≥ïÂä†ËΩΩÊéßÂà∂Âô®:Find
+
+[ 2019-05-09T09:03:52+08:00 ] 127.0.0.1 /Home/Shopping/shopping.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT * FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-09T09:04:07+08:00 ] 127.0.0.1 /Home/Shopping/shopping.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT * FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-09T10:28:53+08:00 ] 127.0.0.1 /Home/Shopping/shopping.html?uid=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cart_list.id  WHERE ( cart_list.uid=18 )' at line 1
+ [ SQLËØ≠Âè• ] : SELECT * FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id cart_list.id  WHERE ( cart_list.uid=18 ) 
+
+[ 2019-05-09T10:29:15+08:00 ] 127.0.0.1 /Home/Shopping/shopping.html?uid=1
+ERR: 1146:Table 'cart_list.id' doesn't exist
+ [ SQLËØ≠Âè• ] : SELECT * FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id,cart_list.id  WHERE ( cart_list.uid=18 ) 
+
+[ 2019-05-09T10:29:51+08:00 ] 127.0.0.1 /Home/Shopping/shopping.html?uid=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ( cart_list.uid=18 )' at line 1
+ [ SQLËØ≠Âè• ] : SELECT * FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id,cart_list.  WHERE ( cart_list.uid=18 ) 
+
+[ 2019-05-09T10:37:27+08:00 ] 127.0.0.1 /Home/Shopping/shopping.html?uid=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goo' at line 1
+ [ SQLËØ≠Âè• ] : SELECT tp_goodsinfo.pic,tp_goodsinfo.price,tp_goodsinfo.goodsname,cart_list. FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid=18 ) 
+
+[ 2019-05-09T10:49:27+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:49:59+08:00 ] 127.0.0.1 /Home/shopping/shopping.html
+ERR: 1054:Unknown column 'tp_goodsinfo.goodsid' in 'field list'
+ [ SQLËØ≠Âè• ] : SELECT tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.id,cart_list.num,tp_goodsinfo.goodsid FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid=18 ) 
+
+[ 2019-05-09T10:50:30+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:32+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:32+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:33+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:34+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:50:51+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:51:30+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:51:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:51:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:51:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:51:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:31+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:33+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:33+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:33+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:33+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:33+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:35+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html?id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:37+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:51+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:52+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:52+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:52+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:52+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T10:52:55+08:00 ] 127.0.0.1 /Home/Index/goodsdata.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : SELECT `pics` FROM `tp_goodsimages` WHERE ( goodsid= ) 
+
+[ 2019-05-09T11:23:46+08:00 ] 127.0.0.1 /Home/Shopping/order.html
+ERR: ÈùûÊ≥ïÊìç‰Ωú:order
+
+[ 2019-05-09T12:12:07+08:00 ] 127.0.0.1 /Home/Shopping/minus.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQLËØ≠Âè• ] : UPDATE `cart_list` SET `num`='0' WHERE ( gid= )
+
+[ 2019-05-09T12:17:16+08:00 ] 127.0.0.1 /Home/Shopping/minus.html
+ERR: 1054:Unknown column 'Array' in 'where clause'
+ [ SQLËØ≠Âè• ] : UPDATE `cart_list` SET `num`='0' WHERE ( gid=Array )
+
+[ 2019-05-09T19:16:09+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=128&&?num=2
+ERR: 1054:Unknown column 'Array' in 'where clause'
+ [ SQLËØ≠Âè• ] : UPDATE `cart_list` SET `num`='0' WHERE ( gid=Array )
+
+[ 2019-05-09T19:16:14+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=128&&?num=2
+ERR: 1054:Unknown column 'Array' in 'where clause'
+ [ SQLËØ≠Âè• ] : UPDATE `cart_list` SET `num`='0' WHERE ( gid=Array )
+
+[ 2019-05-09T19:20:08+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=128&&?num=2
+ERR: 1054:Unknown column 'Array' in 'where clause'
+ [ SQLËØ≠Âè• ] : SELECT `num` FROM `cart_list` WHERE ( gid=Array ) 
+
+[ 2019-05-09T19:36:45+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=128&&?num=8
+ERR: SQLSTATE[HY000] [2002] ”…”⁄¡¨Ω”∑Ω‘⁄“ª∂Œ ±º‰∫Û√ª”–’˝»∑¥∏¥ªÚ¡¨Ω”µƒ÷˜ª˙√ª”–∑¥”¶£¨¡¨Ω”≥¢ ‘ ß∞‹°£
+
+
+[ 2019-05-09T19:38:30+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=128&&?num=9
+ERR: SQLSTATE[HY000] [2002] ”…”⁄¡¨Ω”∑Ω‘⁄“ª∂Œ ±º‰∫Û√ª”–’˝»∑¥∏¥ªÚ¡¨Ω”µƒ÷˜ª˙√ª”–∑¥”¶£¨¡¨Ω”≥¢ ‘ ß∞‹°£
+
+
+[ 2019-05-09T20:20:51+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=128
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.2280s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=128 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-09T20:21:03+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=132
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=132 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-09T20:21:11+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=132
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=132 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-09T20:21:16+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=132
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=132 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-09T20:21:23+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=132
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=132 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-09T20:23:01+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=117
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2019-05-09T20:23:35+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=117
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-09T20:23:36+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=117
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-09T20:23:36+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=117
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-09T20:25:14+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=133
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0180s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=133 ) [ RunTime:0.0170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-09T20:25:47+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=120
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0170s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=120 ) [ RunTime:0.0160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

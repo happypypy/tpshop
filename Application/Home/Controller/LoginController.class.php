@@ -24,7 +24,7 @@ class LoginController extends Controller {
                 $this->redirect("Index/index");
 
             }else{
-                echo "账户或密码错误";
+                $this->error('账号或密码错误',U("Login/login"),2);
             }
             //登陆跳转
         }else{
@@ -57,8 +57,6 @@ class LoginController extends Controller {
           $this->display();
         }
     }
-
-
 
 
     //设置页面
