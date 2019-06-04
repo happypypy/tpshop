@@ -47,8 +47,12 @@ i{font-style:normal;}
 <<<<<<< HEAD
 .header a.left{position:absolute;left:0;top:0px;width:40px;height:44px;z-index:999;background:url(../images/arrow-left.png) no-repeat center center;background-size:50%}
 =======
+<<<<<<< HEAD
+.header a.left{position:absolute;left:0;top:0px;width:40px;height:44px;z-index:999;background:url(../images/arrow-left.png) no-repeat center center;background-size:50%}
+=======
 .header a.left{position:absolute;left:0;top:0px;width:40px;height:44px;z-index:999;background:url(../img/images/arrow-left.png) no-repeat center center;background-size:50%}
 >>>>>>> d4e803aec5a9ccd44ef7ca8bfe3041f6e443f61c
+>>>>>>> fd66300f7494ebe0e692ee5dca0b60538e154c40
 .near-box{
     max-width: 640px;
     overflow: hidden;

@@ -24,7 +24,7 @@ class LoginController extends Controller {
                 $this->redirect("Index/index");
 
             }else{
-                echo "账户或密码错误";
+                $this->error('账号或密码错误',U("Login/login"),2);
             }
             //登陆跳转
         }else{
@@ -51,10 +51,32 @@ class LoginController extends Controller {
             $data['password'] =$phone['password'];
             //执行添加
             $mem->add($data);
+            $find=$mem->where($data)->select();
+            //获取id值存入session
+            $uid=$find['0']['uid'];
+            session('uid',$uid);
             $this->redirect('Index/index');
         }else{
 
           $this->display();
         }
+    }
+
+
+    //设置页面
+    function res(){
+
+
+        $this->display();
+}
+
+  //退出
+    function sets(){
+         //获取session
+        $uid=session('uid');
+        //清空session
+        session('uid',null);
+        $this->redirect("Login/login");
+
     }
 }

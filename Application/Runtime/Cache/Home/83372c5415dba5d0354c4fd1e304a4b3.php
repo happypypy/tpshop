@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
@@ -7,12 +7,12 @@
 	<meta name="format-detection" content="telephone=no, email=no"/>
 	<meta charset="UTF-8">
 	<title>购物车</title>
-	<link rel="stylesheet" href="__PUBLIC__/Home/css/core.css">
-	<link rel="stylesheet" href="__PUBLIC__/Home/css/icon.css">
-	<link rel="stylesheet" href="__PUBLIC__/Home/css/home.css">
+	<link rel="stylesheet" href="/Public/Home/css/core.css">
+	<link rel="stylesheet" href="/Public/Home/css/icon.css">
+	<link rel="stylesheet" href="/Public/Home/css/home.css">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
-    <script src="__PUBLIC__/Home/js/jquery.min.1.8.2.js" type="text/javascript"></script>
+    <script src="/Public/Home/js/jquery.min.1.8.2.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 		</a>
 		<div class="aui-header-center aui-header-center-clear">
 			<div class="aui-header-center-logo">
-				<div class="aui-car-white-Typeface">购物车({$count})</div>
+				<div class="aui-car-white-Typeface">购物车(<?php echo ($count); ?>)</div>
 			</div>
 		</div>
 		<a href="#" class="aui-header-item-icon"   style="min-width:0">
@@ -42,32 +42,31 @@
 				</div>
 			</div>
 			<div class="aui-car-box-list">
-                <foreach name="cart" item="v">
-				<ul>
+                <?php if(is_array($cart)): foreach($cart as $key=>$v): ?><ul>
 					<li>
 						<div class="aui-car-box-list-item">
-							<input type="checkbox" class="check  goods-check goodsCheck"  value="{$v.gid}" id="check{$v.gid}" gid="{$v.gid}" onclick="OK()">
+							<input type="checkbox" class="check  goods-check goodsCheck"  value="<?php echo ($v["gid"]); ?>" id="check<?php echo ($v["gid"]); ?>" gid="<?php echo ($v["gid"]); ?>" onclick="OK()">
 							<div class="aui-car-box-list-img">
-								<a href="{:U('Index/goodsdata')}?id={$v.id}">
-									<img src="__PUBLIC__/Upload/goods/{$v.pic}" alt="">
+								<a href="<?php echo U('Index/goodsdata');?>?id=<?php echo ($v["id"]); ?>">
+									<img src="/Public/Upload/goods/<?php echo ($v["pic"]); ?>" alt="">
 								</a>
 							</div>
 
 							<div class="aui-car-box-list-text">
 								<h4>
-									<a href="ui-product.html">{$v.goodsname}</a>
+									<a href="ui-product.html"><?php echo ($v["goodsname"]); ?></a>
 								</h4>
 
 								<div class="aui-car-box-list-text-price">
 									<div class="aui-car-box-list-text-pri">
-										￥<b class="sale" id="sale{$v.gid}">{$v[sale]*$v[num]}</b>
+										￥<b class="sale" id="sale<?php echo ($v["gid"]); ?>"><?php echo ($v[sale]*$v[num]); ?></b>
 									</div>
 									<div class="aui-car-box-list-text-arithmetic">
-										<a href="javascript:;" class="minus"  onclick="minus({$v.gid},{$v.sale})" >-</a>
-										<span class="num" id="num{$v.gid}" >{$v['num']}</span>
-										<a href="javascript:;" class="plus" onclick="plus({$v.gid},{$v.sale})" >+</a>
+										<a href="javascript:;" class="minus"  onclick="minus(<?php echo ($v["gid"]); ?>,<?php echo ($v["sale"]); ?>)" >-</a>
+										<span class="num" id="num<?php echo ($v["gid"]); ?>" ><?php echo ($v['num']); ?></span>
+										<a href="javascript:;" class="plus" onclick="plus(<?php echo ($v["gid"]); ?>,<?php echo ($v["sale"]); ?>)" >+</a>
                                         <div><br/>
-                                        <div><a href="javascript:;" class="del" gid="{$v.gid}" style="color:red">删除</a>
+                                        <div><a href="javascript:;" class="del" gid="<?php echo ($v["gid"]); ?>" style="color:red">删除</a>
 									</div>
 								</div>
 							</div>
@@ -78,8 +77,7 @@
                         </div>
 					</li>
 
-				</ul>
-                </foreach>
+				</ul><?php endforeach; endif; ?>
 			</div>
             <div class="cart_price">商品总价：￥<b class="total">0</b></div>
 		</div>
@@ -95,7 +93,7 @@
 		</div>
 		<a href="" class="settlement">结算</a>
 	</div>
-	<script src="__PUBLIC__/Home/js/aui-car.js"></script>
+	<script src="/Public/Home/js/aui-car.js"></script>
 
 </body>
 </html>
@@ -109,7 +107,7 @@ $(".del").click(function(){
     obj=$(this);
     //发出请求
     gid=obj.attr('gid');
-    $.get("{:U('Shopping/delcart')}",{"gid":gid},function(res){
+    $.get("<?php echo U('Shopping/delcart');?>",{"gid":gid},function(res){
         if(res==1){
             //执行删除操作
             console.log("删除成功");
@@ -127,7 +125,7 @@ $(".del").click(function(){
    //获取id=num的值转换为数字
         num=parseInt($("#num"+gid).text());
         //声明一个地址变量
-       url="{:U('Shopping/minus')}";
+       url="<?php echo U('Shopping/minus');?>";
         //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
@@ -151,7 +149,7 @@ $(".del").click(function(){
         obj=$(this);
         //获取id=num的值转换为数字
         num=parseInt($("#num"+gid).text());
-        url="{:U('Shopping/plus')}";
+        url="<?php echo U('Shopping/plus');?>";
         //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
@@ -241,7 +239,7 @@ $(".del").click(function(){
             cart_id= a.join(",");
             /*console.log(cart_id);*/
         }
-        $(".settlement").attr('href',"{:U('Createorder/index')}?cart_id="+cart_id)
+        $(".settlement").attr('href',"<?php echo U('Createorder/index');?>?cart_id="+cart_id)
 
         }
 

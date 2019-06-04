@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>登陆</title>
@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
-<link rel="stylesheet" href="__PUBLIC__/Login/lib/weui.min.css">
-<link rel="stylesheet" href="__PUBLIC__/Login/css/jquery-weui.css">
-<link rel="stylesheet" href="__PUBLIC__/Login/css/style.css">
+<link rel="stylesheet" href="/Public/Login/lib/weui.min.css">
+<link rel="stylesheet" href="/Public/Login/css/jquery-weui.css">
+<link rel="stylesheet" href="/Public/Login/css/style.css">
 
 </head>
 <body ontouchstart style="background:#323542;">
@@ -17,16 +17,16 @@
 <div class="login-box">
   	<div class="lg-title">欢迎来到优品商城</div>
     <div class="login-form">
-    	<form action="{:U('Home/Login/login')}" method="post">
+    	<form action="<?php echo U('Home/Login/login');?>" method="post">
         	<div class="login-user-name common-div">
             	<span class="eamil-icon common-icon">
-                	<img src="__PUBLIC__/Login/images/eamil.png" />
+                	<img src="/Public/Login/images/eamil.png" />
                 </span>
                 <input type="text" name="uname" value="" placeholder="请输入您的用户/手机号" />
             </div>
             <div class="login-user-pasw common-div">
             	<span class="pasw-icon common-icon">
-                	<img src="__PUBLIC__/Login/images/password.png" />
+                	<img src="/Public/Login/images/password.png" />
                 </span>
                 <input type="password" name="password" value="" placeholder="请输入您的密码" />
             </div>
@@ -40,16 +40,16 @@
         <a href="regist.html">免费注册</a>
     </div>
 </div>
-<script src="__PUBLIC__/Login/lib/jquery-2.1.4.js"></script> 
-<script src="__PUBLIC__/Login/lib/fastclick.js"></script> 
-<script type="text/javascript" src="__PUBLIC__/Login/js/jquery.Spinner.js"></script>
+<script src="/Public/Login/lib/jquery-2.1.4.js"></script> 
+<script src="/Public/Login/lib/fastclick.js"></script> 
+<script type="text/javascript" src="/Public/Login/js/jquery.Spinner.js"></script>
 <script>
   $(function() {
     FastClick.attach(document.body);
   });
 </script>
 
-<script src="__PUBLIC__/Login/js/jquery-weui.js"></script>
+<script src="/Public/Login/js/jquery-weui.js"></script>
 
 </body>
 </html>

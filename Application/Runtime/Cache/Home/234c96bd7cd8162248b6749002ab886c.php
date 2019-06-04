@@ -1,4 +1,16 @@
-<include file="Common:header"/>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Public/Home/css/core.css">
+    <link rel="stylesheet" href="/Public/Home/css/icon.css">
+    <link rel="stylesheet" href="/Public/Home/css/home.css">
+    <link rel="icon" type="image/x-icon" href="/Public/Home/favicon.ico">
+    <link href="/Public/Home/iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
 	<title>个人中心</title>
 </head>
 <body style="background:#fc0f42">
@@ -6,7 +18,7 @@
 		<a href="#" class="aui-header-item">
 			<!--<i class="aui-icon aui-icon-back-white" id="scrollSearchI" style="display:block"></i>-->
 			<div id="scrollSearchDiv">
-				<img src="__PUBLIC__/Home/img/user/head-3.jpg" alt="">
+				<img src="/Public/Home/img/user/head-3.jpg" alt="">
 			</div>
 		</a>
 		<div class="aui-header-center aui-header-center-clear">
@@ -14,7 +26,7 @@
 
 			</div>
 		</div>
-		<a href="{:U('Login/res')}" class="aui-header-item-icon">
+		<a href="<?php echo U('Login/res');?>" class="aui-header-item-icon">
 			<i class="aui-icon aui-icon-Set"></i>
 		</a>
 	</header>
@@ -26,7 +38,7 @@
 				<div class="aui-me-content-item">
 					<div class="aui-me-content-item-head">
 						<div class="aui-me-content-item-img">
-							<img src="__PUBLIC__/Home/img/user/head-3.jpg" alt="">
+							<img src="/Public/Home/img/user/head-3.jpg" alt="">
 						</div>
 						<div class="aui-me-content-item-title">李嘉桦同学</div>
 					</div>
@@ -56,30 +68,30 @@
 			</div>
 		</div>
 		<div class="aui-me-content-order">
-			<a href="{:U('Order/order')}" class="aui-well aui-fl-arrow">
+			<a href="<?php echo U('Order/order');?>" class="aui-well aui-fl-arrow">
 				<div class="aui-well-bd">我的订单</div>
 				<div class="aui-well-ft">查看全部</div>
 			</a>
 		</div>
 		<section class="aui-grid-content">
 			<div class="aui-grid-row">
-				<a href="{:U('Order/order')}?state=5" class="aui-grid-row-item">
+				<a href="<?php echo U('Order/order');?>?state=5" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-wallet"></i>
 					<p class="aui-grid-row-label">待付款</p>
 				</a>
-				<a href="{:U('Order/order')}?state=3" class="aui-grid-row-item">
+				<a href="<?php echo U('Order/order');?>?state=3" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-goods"></i>
 					<p class="aui-grid-row-label">待发货</p>
 				</a>
-				<a href="{:U('Order/order')}?state=1" class="aui-grid-row-item">
+				<a href="<?php echo U('Order/order');?>?state=1" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-receipt"></i>
 					<p class="aui-grid-row-label">待收货</p>
 				</a>
-				<a href="{:U('Order/order')}?state=2" class="aui-grid-row-item">
+				<a href="<?php echo U('Order/order');?>?state=2" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-evaluate"></i>
 					<p class="aui-grid-row-label">待评价</p>
 				</a>
-				<a href="{:U('Order/order')}" class="aui-grid-row-item">
+				<a href="<?php echo U('Order/order');?>" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-refund"></i>
 					<p class="aui-grid-row-label">退货退款</p>
 				</a>
@@ -107,7 +119,7 @@
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-fight"></i>
 					<p class="aui-grid-row-label">我的拼团</p>
 				</a>
-				<a href="{:U('Home/Hand/index')}" class="aui-grid-row-item">
+				<a href="<?php echo U('Home/Hand/index');?>" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-recommend"></i>
 					<p class="aui-grid-row-label">商品推手</p>
 				</a>
@@ -123,7 +135,7 @@
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-problem"></i>
 					<p class="aui-grid-row-label">我的问答</p>
 				</a>
-				<a href="{:U('Order/mycomment')}" class="aui-grid-row-item">
+				<a href="<?php echo U('Order/mycomment');?>" class="aui-grid-row-item">
 					<i class="aui-icon-large aui-icon-large-sm aui-icon-evaluates"></i>
 					<p class="aui-grid-row-label">我的评价</p>
 				</a>
@@ -133,14 +145,14 @@
 				</a>
 			</div>
 			<div class="aui-recommend">
-				<img src="__PUBLIC__/Home/img/bg/icon-tj3.jpg" alt="">
+				<img src="/Public/Home/img/bg/icon-tj3.jpg" alt="">
 				<!--<h2>为你推荐</h2>-->
 			</div>
 			<section class="aui-list-product">
 				<div class="aui-list-product-box">
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-15.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-15.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -160,7 +172,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-14.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-14.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -180,7 +192,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-13.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-13.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -200,7 +212,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-12.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-12.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -220,7 +232,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-11.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-11.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -240,7 +252,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-10.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-10.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -260,7 +272,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-9.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-9.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -280,7 +292,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-8.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-8.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -300,7 +312,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-16.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-16.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -320,7 +332,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-17.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-17.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -340,7 +352,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-18.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-18.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -360,7 +372,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-19.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-19.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -380,7 +392,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-20.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-20.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -400,7 +412,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-21.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-21.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -420,7 +432,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-22.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-22.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -440,7 +452,7 @@
 					</a>
 					<a href="ui-product.html" class="aui-list-product-item">
 						<div class="aui-list-product-item-img">
-							<img src="__PUBLIC__/Home/img/pd/sf-23.jpg" alt="">
+							<img src="/Public/Home/img/pd/sf-23.jpg" alt="">
 						</div>
 						<div class="aui-list-product-item-text">
 							<h3>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h3>
@@ -463,8 +475,29 @@
 		</section>
 	</section>
 
-	<include file="Common:foot"/>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+	<footer class="aui-footer-default aui-footer-fixed">
+    <a href="<?php echo U('Index/index');?>" class="aui-footer-item aui-footer-active">
+        <span class="aui-footer-item-icon aui-icon aui-footer-icon-home"></span>
+        <span class="aui-footer-item-text">首页</span>
+    </a>
+    <a href="<?php echo U('Type/index');?>" class="aui-footer-item">
+        <span class="aui-footer-item-icon aui-icon aui-footer-icon-class"></span>
+        <span class="aui-footer-item-text">分类</span>
+    </a>
+    <a href="<?php echo U('Find/index');?>" class="aui-footer-item">
+        <span class="aui-footer-item-icon aui-icon aui-footer-icon-find"></span>
+        <span class="aui-footer-item-text">发现</span>
+    </a>
+    <a href="<?php echo U('Shopping/shopping');?>" class="aui-footer-item">
+        <span class="aui-footer-item-icon aui-icon aui-footer-icon-car"></span>
+        <span class="aui-footer-item-text">购物车</span>
+    </a>
+    <a href="<?php echo U('Personal/index');?>" class="aui-footer-item">
+        <span class="aui-footer-item-icon aui-icon aui-footer-icon-me"></span>
+        <span class="aui-footer-item-text">我的</span>
+    </a>
+</footer>
+	<script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
 	<script type="text/javascript">
         $(function () {
             //绑定滚动条事件

@@ -16,8 +16,7 @@ class ShoppingController extends Controller{
              ->select();
          $count=count($cart);
 
-
-
+         //给视图传变量
          $this->assign('cart',$cart);
          $this->assign('count',$count);
          $this->display();
@@ -62,7 +61,6 @@ class ShoppingController extends Controller{
          $num=$num['0']['num'];
         if($num>1){
 
-
         $res=$cart->where("gid=$gid")->setDec("num",1);
         //返回值
          if($res){
@@ -89,6 +87,13 @@ class ShoppingController extends Controller{
         }else{
             echo 2;
         }
+    }
+
+    //下单
+    function goodsid(){
+       $gid=I('get.gid');
+        dump($gid);
+
     }
 
 

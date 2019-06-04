@@ -1,0 +1,24 @@
+[ 2019-05-14T08:44:13+08:00 ] 127.0.0.1 /Home/shopping/shopping
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-14T08:44:24+08:00 ] 127.0.0.1 /Home/shopping/shopping
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-14T08:44:25+08:00 ] 127.0.0.1 /Home/shopping/shopping
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-14T08:44:25+08:00 ] 127.0.0.1 /Home/shopping/shopping
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-14T08:44:25+08:00 ] 127.0.0.1 /Home/shopping/shopping
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-05-14T08:44:25+08:00 ] 127.0.0.1 /Home/shopping/shopping
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
