@@ -84,7 +84,7 @@
 	</section>
 
 	<div class="aui-payment-bar">
-		<div class="all-checkbox"><input type="checkbox"  class="check checkall"  onclick="fun()" gid="0" >全选</div>
+		<div class="all-checkbox"><input type="checkbox"  class="check checkall"  onclick="fun();OK()" gid="0"  >全选</div>
 <!--
         <div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
 -->
@@ -166,7 +166,7 @@ $(".del").click(function(){
 
     //全选全不选
     function fun(){
-        /*console.log('select all....')*/
+        //当执行这串代码是total再次等于0
         total=0;
         if($('.checkall').prop('checked')){
             $('.check').prop('checked',true);
@@ -187,6 +187,7 @@ $(".del").click(function(){
 
         }else{
             $('.check').prop('checked',false);
+            //当全选取消时total等于0
             total = 0;
             $("#total").html(0);
         }
@@ -216,20 +217,31 @@ $(".del").click(function(){
 
     //下单准备
     function OK() {
-        if ($('.check').prop('checked')) {
+        if ($('.check.goods-check.goodsCheck').prop('checked')) {
             var checkBoxArr = [];
             $('.check:checked').each(function () {
                 checkBoxArr.push($(this).attr('gid'));
             });
             a=checkBoxArr;
             cart_id= a.join(",");
-            console.log(cart_id);
+            /*console.log(cart_id);*/
 
 //
-            $(".settlement").attr('href',"<?php echo U('Createorder/index');?>?cart_id="+cart_id)
-    }
 
-    }
+    }else if($('.checkall').prop('checked')) {
+            $('.check').prop('checked', true);
+            var checkBoxArr = [];
+            $('.check:checked').each(function () {
+                checkBoxArr.push($(this).attr('gid'));
+
+            });
+            a=checkBoxArr;
+            cart_id= a.join(",");
+            /*console.log(cart_id);*/
+        }
+        $(".settlement").attr('href',"<?php echo U('Createorder/index');?>?cart_id="+cart_id)
+
+        }
 
 
 

@@ -16,8 +16,7 @@ class ShoppingController extends Controller{
              ->select();
          $count=count($cart);
 
-
-
+         //给视图传变量
          $this->assign('cart',$cart);
          $this->assign('count',$count);
          $this->display();

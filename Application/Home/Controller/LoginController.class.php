@@ -51,6 +51,10 @@ class LoginController extends Controller {
             $data['password'] =$phone['password'];
             //执行添加
             $mem->add($data);
+            $find=$mem->where($data)->select();
+            //获取id值存入session
+            $uid=$find['0']['uid'];
+            session('uid',$uid);
             $this->redirect('Index/index');
         }else{
 

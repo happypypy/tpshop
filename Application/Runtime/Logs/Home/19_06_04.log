@@ -217,3 +217,32 @@ INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 [ 2019-06-04T14:26:31+08:00 ] 127.0.0.1 /Home/shopping/themes/js/jquery.min.js
 ERR: 非法操作:themes
 
+[ 2019-06-04T16:02:37+08:00 ] 127.0.0.1 /Home/shopping/shopping.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-06-04T16:03:16+08:00 ] 127.0.0.1 /Home/shopping/shopping.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT tp_goodsinfo.id,tp_goodsinfo.pic,tp_goodsinfo.sale,tp_goodsinfo.goodsname,cart_list.gid,cart_list.num FROM `cart_list` INNER JOIN member ON cart_list.uid=member.uid INNER JOIN tp_goodsinfo ON cart_list.goodsid=tp_goodsinfo.id  WHERE ( cart_list.uid= ) 
+
+[ 2019-06-04T16:05:07+08:00 ] 127.0.0.1 /Home/Shopping/addcart.html?tid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `cart_list` WHERE `goodsid` = 2 AND `uid` = 115  [ RunTime:0.0130s ]
+SQL: INSERT INTO `cart_list` (`goodsid`,`uid`) VALUES ('2','115') [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T16:06:48+08:00 ] 127.0.0.1 /Home/Shopping/delcart.html?gid=326
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: DELETE FROM `cart_list` WHERE ( gid=326 ) [ RunTime:0.0120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

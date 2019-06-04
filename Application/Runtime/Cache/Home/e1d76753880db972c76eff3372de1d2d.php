@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/Public/Login/lib/weui.min.css">
 <link rel="stylesheet" href="/Public/Login/css/jquery-weui.css">
 <link rel="stylesheet" href="/Public/Login/css/style.css">
+<script src="<?php echo U('/Public/Home/js');?>/jquery.min.1.8.2.js" type="text/javascript"></script>
 </head>
 <body ontouchstart>
 <form action="<?php echo U('Home/Login/regist');?>" method="post">
