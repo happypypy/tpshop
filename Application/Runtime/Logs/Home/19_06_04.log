@@ -246,3 +246,786 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
+[ 2019-06-04T16:50:37+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','15038616165','6','')
+
+[ 2019-06-04T16:50:43+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','15038616165','0','')
+
+[ 2019-06-04T16:50:52+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','15038616165','0','')
+
+[ 2019-06-04T16:57:18+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','','0','123')
+
+[ 2019-06-04T16:58:10+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','','0','123')
+
+[ 2019-06-04T17:09:59+08:00 ] 127.0.0.1 /home/login/%7BU:(Login/regist)%7D
+ERR: 非法操作:{U:(Login
+
+[ 2019-06-04T17:11:09+08:00 ] 127.0.0.1 /home/login/%7BU:(Login/regist)%7D
+ERR: 非法操作:{U:(Login
+
+[ 2019-06-04T17:12:32+08:00 ] 127.0.0.1 /home/login/%7BU:(Login/regist)%7D
+ERR: 非法操作:{U:(Login
+
+[ 2019-06-04T17:13:23+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','123','123','123')
+
+[ 2019-06-04T17:15:39+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','123','0','123')
+
+[ 2019-06-04T17:16:40+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','123','0','123')
+
+[ 2019-06-04T17:27:01+08:00 ] 127.0.0.1 /Home/Login/regist.html
+ERR: 1062:Duplicate entry '123' for key '账户名'
+ [ SQL语句 ] : INSERT INTO `member` (`uname`,`phone`,`code`,`password`) VALUES ('123','123','0','')
+
+[ 2019-06-04T18:57:39+08:00 ] 127.0.0.1 /Home/Order/comment.html?sn=int1555589450720
+ERR: 1054:Unknown column 'int1555589450720' in 'where clause'
+ [ SQL语句 ] : SELECT o.ordersn,`userid`,c.gid,g.pic,`goodsname` FROM order_connect c left join orders as o on o.ordersn=c.ordersn left join goods_info as g on g.id=c.gid  WHERE ( o.userid=2 and o.state=2 and o.ordersn=int1555589450720 ) 
+
+[ 2019-06-04T18:58:07+08:00 ] 127.0.0.1 /Home/Personal/my-coupon.html
+ERR: 非法操作:my-coupon
+
+[ 2019-06-04T18:58:09+08:00 ] 127.0.0.1 /Home/Personal/my-sign.html
+ERR: 非法操作:my-sign
+
+[ 2019-06-04T18:58:12+08:00 ] 127.0.0.1 /Home/Personal/my-invitation.html
+ERR: 非法操作:my-invitation
+
+[ 2019-06-04T19:03:24+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0170s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0160s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:03:25+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:03:48+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+
+
+[ 2019-06-04T19:04:06+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:04:07+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:04:08+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:04:09+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:45+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:45+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:45+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:46+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:46+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:46+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:47+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:50+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:50+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:51+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:51+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:51+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:51+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:52+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:05:52+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:53+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:53+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:54+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:54+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:05:55+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:13:02+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:13:03+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:13:04+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:13:05+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:13:05+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:13:05+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:13:06+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.2260s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:13:06+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:14:26+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:14:26+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:14:29+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:14:29+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:16:40+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:16:42+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:16:52+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:16:56+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:17:22+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:18:52+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:18:53+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:18:54+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:18:55+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:18:55+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:18:55+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:18:55+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:19:00+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:19:02+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:26:49+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0190s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:26:51+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0160s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:26:56+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:27:29+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:27:31+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:11+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0170s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0170s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:28:11+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=156
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=156 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=156 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:30+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:30+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:31+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=321 ) [ RunTime:0.0140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:28:31+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:32+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:28:32+08:00 ] 127.0.0.1 /Home/Shopping/plus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0140s ]
+SQL: UPDATE `cart_list` SET `num`=num+1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:39+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=321 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:40+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=321 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-04T19:28:41+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=321 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-04T19:28:44+08:00 ] 127.0.0.1 /Home/Shopping/minus.html?gid=321
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart_list` [ RunTime:0.0130s ]
+SQL: SELECT `num` FROM `cart_list` WHERE ( gid=321 )  [ RunTime:0.0130s ]
+SQL: UPDATE `cart_list` SET `num`=num-1 WHERE ( gid=321 ) [ RunTime:0.0130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

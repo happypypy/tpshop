@@ -79,7 +79,6 @@
 
 				</ul><?php endforeach; endif; ?>
 			</div>
-            <div class="cart_price">商品总价：￥<b class="total">0</b></div>
 		</div>
 	</section>
 
@@ -129,6 +128,10 @@ $(".del").click(function(){
         //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
+                if($('.check.goods-check.goodsCheck'+gid).prop('checked',true)) {
+                    total = total - sale;
+                    $("#total").html(total);
+                }
                 //每点击执行一次该数值--
                 num--;
                 //小计
@@ -153,6 +156,10 @@ $(".del").click(function(){
         //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
+                if($('.check.goods-check.goodsCheck'+gid).prop('checked',true)){
+                    total=total+sale;
+                    $("#total").html(total);
+                }
                //每点击执行一次该数值++
                 num++;
                //小计

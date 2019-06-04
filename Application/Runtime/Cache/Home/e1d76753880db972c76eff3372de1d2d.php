@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="/Public/Login/lib/weui.min.css">
 <link rel="stylesheet" href="/Public/Login/css/jquery-weui.css">
 <link rel="stylesheet" href="/Public/Login/css/style.css">
-<script src="<?php echo U('/Public/Home/js');?>/jquery.min.1.8.2.js" type="text/javascript"></script>
 </head>
 <body ontouchstart>
 <form action="<?php echo U('Home/Login/regist');?>" method="post">
@@ -53,7 +52,7 @@
     <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox" checked="checked">
     <span class="weui-agree__text">阅读并同意<a href="javascript:void(0);">《注册协议》</a></span>
   </label>
- <a href="<?php echo U('Home/index/index');?>"><input class="weui-btn_warn weui-btn-area weui-btn" type="submit" value="注册并登录">
+ <a href=""><input class="weui-btn_warn weui-btn-area weui-btn" type="submit" value="注册并登录">
   <div class="weui-cells__tips t-c font-12"><h3>登陆账号为您输入的手机号码</h3></div></a>
   <div class="weui-cells__tips t-c pd-10"><a href="xieyi.html" class="weui-cell_link font-12">查看注册协议</a></div>
   

@@ -81,7 +81,6 @@
 				</ul>
                 </foreach>
 			</div>
-            <div class="cart_price">商品总价：￥<b class="total">0</b></div>
 		</div>
 	</section>
 
@@ -131,6 +130,12 @@ $(".del").click(function(){
         //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
+                //判断是否选中复选框
+                if($('.check.goods-check.goodsCheck'+gid).prop('checked',true)) {
+                    //商品总价为商品总价减去该商品的单价
+                    total = total - sale;
+                    $("#total").html(total);
+                }
                 //每点击执行一次该数值--
                 num--;
                 //小计
@@ -155,6 +160,12 @@ $(".del").click(function(){
         //开始传值
         $.get(url,{gid:gid},function(res){
             if(res==1){
+                //判断是否选中复选框
+                if($('.check.goods-check.goodsCheck'+gid).prop('checked',true)){
+                    //商品总价为商品总价加上该商品的单价
+                    total=total+sale;
+                    $("#total").html(total);
+                }
                //每点击执行一次该数值++
                 num++;
                //小计
