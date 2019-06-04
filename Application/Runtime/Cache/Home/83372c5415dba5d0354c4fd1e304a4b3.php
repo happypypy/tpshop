@@ -164,34 +164,40 @@ $(".del").click(function(){
     }
 
 
-
     //全选全不选
     function fun(){
+        /*console.log('select all....')*/
+        total=0;
         if($('.checkall').prop('checked')){
             $('.check').prop('checked',true);
             var checkBoxArr = [];
             $('.check:checked').each(function() {
                 checkBoxArr.push($(this).attr('gid'));
             });
-            console.log(checkBoxArr);
+
             for(j = 0,len=checkBoxArr.length; j < len-1; j++) {
                 gid=checkBoxArr[j];
                 money=$("#sale"+gid).text();
                 total=parseInt(total)+parseInt(money);
+
             }
-            $(".total").html(total);
-            console.log(total);
+
+
+            $("#total").html(total);
+
         }else{
             $('.check').prop('checked',false);
+            total = 0;
             $("#total").html(0);
         }
     }
 
    //商品总价
 
-  $('.check').change(function(){
+  $('.check.goods-check.goodsCheck').change(function(){
+     /* console.log('change.....')*/
         obj=$(this);
-//        console.log(obj);
+
         if(obj.prop('checked')){
             gid=obj.attr('gid');
             money=$("#sale"+gid).text();
@@ -204,9 +210,6 @@ $(".del").click(function(){
         }
         $("#total").html(total);
     });
-
-
-
 
 
 
