@@ -182,9 +182,9 @@
 			<h2>
 				{$v.goodsname}
 			</h2>
-			<p>
-				时尚精美,不含激素,超级好用.不管是精致妆容,淡妆,还是素颜都十分搭配.
-			</p>
+			<!--<p>-->
+				<!--时尚精美,不含激素,超级好用.不管是精致妆容,淡妆,还是素颜都十分搭配.-->
+			<!--</p>-->
 		</div>
             </foreach>
 		<div class="aui-product-boutique clearfix">
@@ -204,6 +204,7 @@
 			<div class="m-actionsheet" id="actionSheet">
                 <form>
 				<div style="position:relative">
+
 					<div style="height:100px;">
 
                             <div style="margin-top: 50px">
@@ -212,11 +213,12 @@
                             <input class="add" name="" type="button" value="+" style="width: 20px"/>
                             </div>
 					</div>
+
 					<a href="javascript:;" class="actionsheet-action" id="cancel">关闭</a>
 					<div class="aui-product-function">
 						<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata" onclick="cart()"><!--<input type="submit" value="加入购物车">-->加入购物车</a>
 
-						<a href="order.html" class="red-color">立即购买</a>
+						<a href="{:U('Createorder/index')}?gid={$a}" class="red-color">立即购买</a>
 					</div>
 
 				</div>
@@ -356,7 +358,7 @@
 			</div>
 			<div class="aui-footer-product-action-list">
 				<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata" onclick="cart()">加入购物车</a>
-				<a href="order.html" class="red-color">立即购买</a>
+				<a href="{:U('Createorder/index')}?gid={$a}" class="red-color">立即购买</a>
 			</div>
 		</div>
 	</footer>
@@ -438,9 +440,12 @@
         $(".jian").click(function(){
             var n=$(this).next().val();
             var num=parseInt(n)-1;
+
             if(num==0){ return}
             $(this).next().val(num);
         });});
+
+
 
 </script>
 
