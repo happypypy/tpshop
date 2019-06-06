@@ -6,7 +6,7 @@ $(function(){
 		if (t.text() <= 1) {
 			t.text(1);
 		}
-		TotalPrice();
+
 	});
 	// 数量加
 	$(".plus").click(function() {
@@ -15,11 +15,11 @@ $(function(){
 		if (t.text() <= 1) {
 			t.text(1);
 		}
-		TotalPrice();
+
 	});
 	/******------------分割线-----------------******/
 	  // 点击商品按钮
-  $(".goodsCheck").click(function() {
+  /*$(".goodsCheck").click(function() {
     var goods = $(this).closest(".aui-car-box").find(".goodsCheck"); //获取本店铺的所有商品
     var goodsC = $(this).closest(".aui-car-box").find(".goodsCheck:checked"); //获取本店铺所有被选中的商品
     var Shops = $(this).closest(".aui-car-box").find(".shopCheck"); //获取本店铺的全选按钮
@@ -39,9 +39,9 @@ $(function(){
       TotalPrice();
       // 计算
     }
-  });
+  });*/
   // 点击店铺按钮
-  $(".shopCheck").click(function() {
+ /* $(".shopCheck").click(function() {
     if ($(this).prop("checked") == true) { //如果店铺按钮被选中
       $(this).parents(".aui-car-box").find(".goods-check").prop('checked', true); //店铺内的所有商品按钮也被选中
       if ($(".shopCheck").length == $(".shopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
@@ -55,10 +55,10 @@ $(function(){
       $(this).parents(".aui-car-box").find(".goods-check").prop('checked', false); //店铺内的所有商品也不被全选
       $("#AllCheck").prop('checked', false); //全选按钮也不被选中
       TotalPrice();
-    }
-  });
+    }*/
+/*  });*/
   // 点击全选按钮
-  $("#AllCheck").click(function() {
+/*  $("#AllCheck").click(function() {
     if ($(this).prop("checked") == true) { //如果全选按钮被选中
       $(".goods-check").prop('checked', true); //所有按钮都被选中
       TotalPrice();
@@ -67,9 +67,9 @@ $(function(){
       TotalPrice();
     }
     $(".shopCheck").change(); //执行店铺全选的操作
-  });
+  });*/
 	//计算
-  function TotalPrice() {
+ /* function TotalPrice() {
     var allprice = 0; //总价
     $(".aui-car-box").each(function() { //循环每个店铺
       var oprice = 0; //店铺总价
@@ -86,5 +86,5 @@ $(function(){
       allprice += oneprice; //计算所有店铺的总价
     });
     $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
-  }
+  }*/
 });
