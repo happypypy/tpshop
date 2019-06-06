@@ -234,13 +234,13 @@ $(".del").click(function(){
     //下单准备
     function OK() {
         if ($('.check.goods-check.goodsCheck').prop('checked')) {
+
             var checkBoxArr = [];
-            $('.check:checked').each(function () {
+            $('.check.goods-check.goodsCheck:checked').each(function () {
                 checkBoxArr.push($(this).attr('gid'));
             });
             a=checkBoxArr;
             cart_id= a.join(",");
-            console.log(cart_id);
             $(".settlement").attr('href',"{:U('Createorder/index')}?cart_id="+cart_id);
 //
     }else if($('.checkall').prop('checked')) {
@@ -252,7 +252,6 @@ $(".del").click(function(){
             });
             a=checkBoxArr;
             cart_id= a.join(",");
-            console.log(cart_id);
             $(".settlement").attr('href',"{:U('Createorder/index')}?cart_id="+cart_id);
         }
 
