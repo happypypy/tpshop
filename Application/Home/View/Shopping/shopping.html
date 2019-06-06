@@ -163,7 +163,7 @@ $(".del").click(function(){
         $.get(url,{gid:gid},function(res){
             if(res==1){
                 //判断是否选中复选框
-                if($('#Check'+gid).prop('checked')){
+                if($('#check'+gid).prop('checked')){
                     //商品总价为商品总价加上该商品的单价
                     total=total+sale;
                     $("#total").html(total);
@@ -252,6 +252,7 @@ $(".del").click(function(){
             });
             a=checkBoxArr;
             cart_id= a.join(",");
+            console.log(cart_id);
             $(".settlement").attr('href',"{:U('Createorder/index')}?cart_id="+cart_id);
         }
 
