@@ -72,7 +72,7 @@ class IndexController extends Controller {
             ->field('pics')
             ->where("goodsid=$id")
             ->select();
-           // dump($goodimg);
+          // dump($goodimg);
         $goods=M('tp_goodsinfo')
             ->field('goodsname,price,sale,id')
             ->where("id=$id")
