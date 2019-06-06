@@ -424,7 +424,6 @@
         obj=$(this);
         tid=obj.attr('tid');
         num=$('.text_box').val();
-        console.log(num);
         $.get("{:U('Home/Shopping/addcart')}",{'tid':tid,'num':num},function(){
 
         },"text");
