@@ -40,6 +40,7 @@ class ShoppingController extends Controller{
         }else{
             $data['num']=$num;
         $cart->add($data);
+
     }
         //$this->redirect("Shopping/shopping");
     }
