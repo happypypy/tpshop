@@ -244,7 +244,7 @@ $(".del").click(function(){
             $(".settlement").attr('href',"{:U('Createorder/index')}?cart_id="+cart_id);
 //
     }else if($('.checkall').prop('checked')) {
-            $('.check').prop('checked',true);
+            $('.check').prop('checked');
             var checkBoxArr = [];
             $('.check:checked').each(function () {
                 checkBoxArr.push($(this).attr('gid'));
