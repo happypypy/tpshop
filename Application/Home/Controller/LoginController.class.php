@@ -48,6 +48,7 @@ class LoginController extends Controller {
             $res['password'] = I('post.password');
             $res['password1'] = I('post.password1');
             $data1 = $model->create();
+
             if($data1){
 
               $phone = I('post.');

@@ -40,6 +40,7 @@ class ShoppingController extends Controller{
             $cart->where($data)->setInc("num",$num);
         }else{
         $cart->add($data);
+
     }
         //$this->redirect("Shopping/shopping");
     }
