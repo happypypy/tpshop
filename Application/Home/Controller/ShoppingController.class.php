@@ -33,12 +33,12 @@ class ShoppingController extends Controller{
         $cart=M('cart_list');
         $data['goodsid']=$goodsid=I('get.tid');
          $data['uid']=$uid=session('uid');
-        $data['num']=$num;
         //查询数据库里有没有
         $if=$cart->where($data)->select();
         if($if){
             $cart->where($data)->setInc("num",$num);
         }else{
+            $data['num']=$num;
         $cart->add($data);
     }
         //$this->redirect("Shopping/shopping");
