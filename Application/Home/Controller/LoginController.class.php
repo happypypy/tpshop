@@ -38,28 +38,43 @@ class LoginController extends Controller {
 
     //注册界面
     public function regist(){
+//        echo "11111111";
         //判断是否是post提交
         if(IS_POST) {
-            //接受数据
-            $phone = I('post.');
-            //     dump($phone['phone']);
-            //获取数据
-            $mem = M('member');
-            $data['uname'] =$phone['uname'];
-            $data['phone'] = $phone['phone'];
-            $data['code'] = $phone['code'];
-            $data['password'] =$phone['password'];
-            //执行添加
-            $mem->add($data);
-            $find=$mem->where($data)->select();
-            //获取id值存入session
-            $uid=$find['0']['uid'];
-            session('uid',$uid);
-            $this->redirect('Index/index');
-        }else{
+            //表单验证
+            $model= D("member");//获取模型传来的值
+            $res['uname'] = I('post.uname');
+            $res['phone'] = I('post.phone');
+            $res['password'] = I('post.password');
+            $res['password1'] = I('post.password1');
+            $data1 = $model->create();
+            if($data1){
 
-          $this->display();
+              $phone = I('post.');
+                //获取数据
+                $mem = M('member');
+                $data['uname'] =$phone['uname'];
+                $data['phone'] = $phone['phone'];
+                $data['code'] = $phone['code'];
+                $data['password'] =$phone['password'];
+                //执行添加
+                $data=$mem->add($data1);
+                $this->display("login/login");
+                $find=$mem->where($data)->select();
+                //获取id值存入session
+                $uid=$find['0']['uid'];
+                session('uid',$uid);
+                $this->redirect('Index/index');
+            }else{
+                $error = $model->getError();
+                $this->assign("error", $error);
+                $this->display('login/regist');
+
         }
+        }else{
+            $this->display();
+        }
+
     }
 
 
@@ -77,6 +92,20 @@ class LoginController extends Controller {
         //清空session
         session('uid',null);
         $this->redirect("Login/login");
+
+    }
+
+    //生成验证码
+    function codeImg(){
+        $c=[
+            'length'=>4, //验证码位数
+            'useNoise'=>true,//开启验证码杂点
+            'imageW'=>0,
+            'imageH'=>50,
+            'codeSet'=>'0123456789',
+        ];
+        $Verify=new \Think\Verify($c);
+        $Verify->entry();
 
     }
 }

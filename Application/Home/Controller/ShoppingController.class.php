@@ -7,6 +7,11 @@ class ShoppingController extends Controller{
      function shopping(){
          //获取用户id
          $uid=session('uid');
+         #如果uid等于空的话则跳回登录界面
+         if(empty($uid)){
+
+             $this->display("Login/login");
+         }
         //多表联查
               $cart=M('cart_list')
              ->join('member ON cart_list.uid=member.uid')
@@ -24,13 +29,15 @@ class ShoppingController extends Controller{
 
     //加入购物车操作
     function addcart(){
+        $num=I("get.num");
         $cart=M('cart_list');
         $data['goodsid']=$goodsid=I('get.tid');
          $data['uid']=$uid=session('uid');
+        $data['num']=$num;
         //查询数据库里有没有
         $if=$cart->where($data)->select();
         if($if){
-            $cart->where($data)->setInc("num",1);
+            $cart->where($data)->setInc("num",$num);
         }else{
         $cart->add($data);
     }
