@@ -197,32 +197,37 @@
 			<img src="__PUBLIC__/Home/img/bg/ssy.jpg" alt="">
 		</div>
 		<div class="aui-product-coupon">
-			<a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear" data-ydui-actionsheet="{target:'#actionSheet',closeElement:'#cancel'}">
+			<a href="#" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear buy" data-ydui-actionsheet="{target:'#actionSheet',closeElement:'#cancel'}">
 				<div class="aui-address-cell-bd">选择</div>
 				<div class="aui-address-cell-ft">颜色分类</div>
 			</a>
 			<div class="m-actionsheet" id="actionSheet">
-                <form>
+
 				<div style="position:relative">
+                    <span style="float: left;font-size: 18px; margin-top: 185px;margin-left: 10px">购买数量</span>
+					<div style="height:350px;">
+                        <div>
+                            <img src="__PUBLIC__/Upload/goods/{$goodimg[0]['pics']}" style="width: 150px;margin-top: 5px;position: fixed;top:10px;left: 10px">
+                            <span style="color: red;font-size: 20px;float: left;margin-left:95px;margin-top: 40px">￥{$goods['0']['sale']}</span>
+                        </div>
+                        <!--<span style="position:absolute;float: left;font-size: 18px; margin-top: 23px">购买数量</span>-->
 
-					<div style="height:100px;">
-
-                            <div style="margin-top: 50px">
-                            <input class="jian" name="" type="button" value="-" style="width: 20px"/>
-                            <input class="text_box" name="goodnum" type="text" value="1" style="width:25px;"/>
-                            <input class="add" name="" type="button" value="+" style="width: 20px"/>
+                            <div style="margin-top:185px;float: right;margin-right: 10px">
+                            <input class="jian" name="" type="button" value="-" style="width: 30px;height: 25px"/>
+                            <input class="text_box" name="goodnum" type="text" value="1" style="width:35px;height: 25px"/>
+                            <input class="add" name="" type="button" value="+" style="width: 30px;height: 25px"/>
                             </div>
 					</div>
 
-					<a href="javascript:;" class="actionsheet-action" id="cancel">关闭</a>
+					<a href="javascript:;" class="actionsheet-action" id="cancel" style="position:fixed;right:8px;top:8px"><img src="__PUBLIC__/Home/img/images/no.png" style="height: 35px"></a>
 					<div class="aui-product-function">
 						<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata" onclick="cart()"><!--<input type="submit" value="加入购物车">-->加入购物车</a>
 
-						<a href="{:U('Createorder/index')}?gid={$a}" class="red-color">立即购买</a>
+						<a href="javascript:;" gid={$a} class="red-color snum" id="adddd">立即购买</a>
 					</div>
 
 				</div>
-                </form>
+
 			</div>
 			<a href="{:U('Index/cheap',array('id'=>1,'idd'=>2,'iddd'=>3))}" class="aui-address-cell aui-fl-arrow aui-fl-arrow-clear">
 				<div class="aui-address-cell-bd">领券</div>
@@ -357,8 +362,8 @@
 				</a>
 			</div>
 			<div class="aui-footer-product-action-list">
-				<a href="javascript:;" tid="{$a}" class="yellow-color goodsdata" onclick="cart()">加入购物车</a>
-				<a href="{:U('Createorder/index')}?gid={$a}" class="red-color">立即购买</a>
+				<a href="javascript:;" tid="{$a}" class="yellow-color addd" >加入购物车</a>
+				<a href="javascript:;" class="red-color snum addd" >立即购买</a>
 			</div>
 		</div>
 	</footer>
@@ -418,7 +423,9 @@
     $('.goodsdata').click(function(){
         obj=$(this);
         tid=obj.attr('tid');
-        $.get("{:U('Home/Shopping/addcart')}",{'tid':tid},function(){
+        num=$('.text_box').val();
+        console.log(num);
+        $.get("{:U('Home/Shopping/addcart')}",{'tid':tid,'num':num},function(){
 
         },"text");
 
@@ -435,16 +442,40 @@
             var num=parseInt(n)+1;
             if(num==0){ return;}
             $(this).prev().val(num);
+
         });
         //减的效果
         $(".jian").click(function(){
             var n=$(this).next().val();
             var num=parseInt(n)-1;
-
             if(num==0){ return}
             $(this).next().val(num);
+
         });});
 
+    $('.snum').click(function(){
+        obj=$(this);
+        gid=obj.attr('gid');
+        num=$('.text_box').val();
+        $.get("{:U('Createorder/index')}",{'gid':gid,'num':num},function(){
+
+        },"text");
+
+    });
+    $('#adddd').click(function(){
+        obj=$(this);
+        gid=$('.snum').attr('gid');
+//        console.log(gid)
+        num=$('.text_box').val();
+        obj.attr("href","{:U('Createorder/index')}?gid="+gid+"&num="+num)
+//        console.log(obj.attr("href"))
+
+    });
+
+    $('.addd').click(function(){
+        $('.buy').click()
+
+    })
 
 
 </script>
