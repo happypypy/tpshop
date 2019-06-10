@@ -58,6 +58,7 @@ class LoginController extends Controller {
                 $data['phone'] = $phone['phone'];
                 $data['code'] = $phone['code'];
                 $data['password'] =$phone['password'];
+                $data['password']=$phone['password1'];
                 //执行添加
                 $data=$mem->add($data1);
                 $this->display("login/login");
